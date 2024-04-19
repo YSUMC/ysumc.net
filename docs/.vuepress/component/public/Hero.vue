@@ -35,9 +35,9 @@ onMounted(() => {
   })
 })
 
-const {stop} = useIntersectionObserver(
+const { stop } = useIntersectionObserver(
     target,
-    ([{isIntersecting}], observerElement) => {
+    ([{ isIntersecting }], observerElement) => {
       if (isIntersecting) {
         if (!__VUEPRESS_SSR__) {
           window.addEventListener('scroll', handleScroll)
@@ -56,13 +56,10 @@ function handleScroll() {
     const a = target.value.getBoundingClientRect()
     if (a.top < 40 && a.bottom > 0) {
       setNavBar(true)
-    } else {
-      // setNavBar(false)
     }
   }
 }
 </script>
-
 
 <template>
   <div class="w-full relative overflow-hidden" ref="target">

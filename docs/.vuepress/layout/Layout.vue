@@ -23,7 +23,7 @@ provide('setNavBar', setNavBar)
 </script>
 
 <template>
-  <Header/>
+  <Header :is-transparent="navBar.isTransparent" :color="navBar.color"/>
   <Hero :image=HeroImage class="mb-14">
     <div class="absolute bottom-36 md:top-[23%] left-4 md:left-8">
       <div class="w-full">
