@@ -1,15 +1,15 @@
-import { defineClientConfig } from 'vuepress/client'
-import Article from './layouts/Article.vue'
-import Category from './layouts/Category.vue'
-import Tag from './layouts/Tag.vue'
-import Timeline from './layouts/Timeline.vue'
+import {defineClientConfig} from 'vuepress/client'
+import Layout from "./layout/Layout.vue";
+import AutoLink from "./component/public/AutoLink.vue";
+
+import './style/index.scss'
 
 export default defineClientConfig({
   // we provide some blog layouts
   layouts: {
-    Article,
-    Category,
-    Tag,
-    Timeline,
+    Layout,
   },
+  // enhance({app}) {
+  //   app.component("AutoLink", AutoLink)
+  // }
 })

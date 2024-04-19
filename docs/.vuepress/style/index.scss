@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'YSUMC';
+  font-weight: 400;
+  src:
+          url(../asset/font/YSUMC_tandard_Minecraft_Font.woff2) format(woff2),
+          url(../asset/font/YSUMC_tandard_Minecraft_Font.woff) format(woff);
+  font-display: swap;
+}
+
+.font-ysumc {
+  font-family: 'YSUMC', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f1f1f1;
+  color: #3b3b3b;
+}
