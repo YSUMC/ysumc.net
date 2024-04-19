@@ -9,7 +9,10 @@ export default defineClientConfig({
   layouts: {
     Layout,
   },
-  // enhance({app}) {
-  //   app.component("AutoLink", AutoLink)
-  // }
+  async enhance({app}) {
+    if (!__VUEPRESS_SSR__) {
+      const jarallax = await import('jarallax')
+      app.provide('jarallax', jarallax)
+    }
+  }
 })

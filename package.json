@@ -23,6 +23,7 @@
     "vuepress": "^2.0.0-rc.7"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
     "jarallax": "^2.2.0"
   }
 }
