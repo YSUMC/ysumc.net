@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
-    "jarallax": "^2.2.0"
+    "jarallax": "^2.2.0",
+    "vuepress-plugin-md-enhance": "2.0.0-rc.37"
   }
 }

@@ -53,6 +53,7 @@ const { stop } = useIntersectionObserver(
 
 function handleScroll() {
   if (!__VUEPRESS_SSR__) {
+    if (!target.value) return
     const a = target.value.getBoundingClientRect()
     if (a.top < 40 && a.bottom > 0) {
       setNavBar(true)

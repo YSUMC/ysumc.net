@@ -1,7 +1,6 @@
-
 <script setup lang="ts">
-import footerBkg from '@/asset/image/footer-bkg.png'
-import logoText from '@/asset/image/logo/ysumc-text.svg'
+import footerBkg from '@/image/footer-bkg.png'
+import logoText from '@/image/logo/ysumc-text.svg'
 import AutoLink from "./AutoLink.vue";
 
 const content = [

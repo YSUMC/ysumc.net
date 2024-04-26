@@ -2,6 +2,7 @@
 export default {
   content: [
     "./docs/.vuepress/**/*.{js,ts,vue}",
+    "./docs/**/*.md",
   ],
   theme: {
     colors: {

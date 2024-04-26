@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {ref, computed, onMounted, onUnmounted} from "vue";
 import AutoLink from "./AutoLink.vue";
-import logo from '@/asset/image/logo/ysumc-color.svg';
-import logoWhite from '@/asset/image/logo/ysumc-white.svg'
+import logo from '@/image/logo/ysumc-color.svg';
+import logoWhite from '@/image/logo/ysumc-white.svg'
 
 const top = ref(true)
 const mobileNavOpen = ref(false)

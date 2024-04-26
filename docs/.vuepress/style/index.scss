@@ -11,6 +11,16 @@
   font-display: swap;
 }
 
+// Mobirise Icons
+@import '../asset/mobirise-icons2/mobirise2.css';
+
+// Socion Icons
+@import '../asset/socicon/css/styles.css';
+
+:root{
+  --font-ysumc: 'YSUMC', sans-serif
+}
+
 .font-ysumc {
   font-family: 'YSUMC', sans-serif;
 }
