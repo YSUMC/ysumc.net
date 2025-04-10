@@ -30,7 +30,7 @@ const NavBarList = [
   {
     name: '项目',
     isMenu: false,
-    link: '/project',
+    link: '/project/',
   },
   {
     name: '资料',

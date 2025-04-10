@@ -135,7 +135,6 @@ Studio于2009年推出的沙盒类电子游戏。游戏中以“方块”为单�
 <CountDown
 :time="new Date('2024/2/10')"
 title="距离下一次惊艳大家还剩下："
-:image=CountDownImg
->
+:image=CountDownImg>
 燕山大学MC社从来不缺惊喜。
 </CountDown>

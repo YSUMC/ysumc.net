@@ -72,7 +72,7 @@ function handleScroll() {
           v-if="!props.isVideo || props.backupImg"
           :src="props.isVideo ? props.backupImg : props.image"
           class="absolute m-auto inset-0 -z-10 jarallax-img"
-          :class="props.dark ? `brightness-[${props.dark}]` : ''"
+          :style="props.dark ? `filter: brightness(${props.dark})` : ''"
           alt="hero image"
       />
       <div v-if="title || text" class="text-white text-center">
