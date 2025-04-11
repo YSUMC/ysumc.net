@@ -65,7 +65,7 @@ function handleScroll() {
 <template>
   <div class="w-full relative overflow-hidden" ref="target">
     <div
-        class="relative h-screen jarallax flex items-center justify-center"
+        class="relative h-dvh jarallax flex items-center justify-center"
         ref="jarallaxItem"
     >
       <img

@@ -163,7 +163,7 @@ function keyHandler(e: any) {
 
         <!-- Mobile navigation -->
         <div
-            class="bg-black/50 fixed left-0 top-0 w-screen h-screen z-10 transition-opacity duration-200 ease-in-out"
+            class="bg-black/50 fixed left-0 top-0 w-screen h-dvh z-10 transition-opacity duration-200 ease-in-out"
             v-show="mobileNavOpen"
             @click="mobileNavOpen = false"
         ></div>
@@ -180,7 +180,7 @@ function keyHandler(e: any) {
         >
           <div
               v-show="mobileNavOpen"
-              class="fixed right-0 top-0 h-screen z-20 w-1/2 overflow-scroll bg-base-white shadow-xl"
+              class="fixed right-0 top-0 h-dvh z-20 w-1/2 overflow-scroll bg-base-white shadow-xl"
           >
             <ul class="px-5 py-2">
               <!-- <li>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import Button from "./public/Button.vue";
+import Button from "../public/Button.vue";
 import {useClientData} from 'vuepress/client'
 
 const {pageFrontmatter} = useClientData()

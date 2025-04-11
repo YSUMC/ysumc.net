@@ -1,11 +1,15 @@
+---
+layout: BlankPage
+---
+
 <script setup>
 import Hero from '@/component/Hero.vue'
 import ImageText from '@/component/ImageText.vue'
 import TwoColumn from '@/component/TwoColumn.vue'
 import ProjectCard from '@/component/ProjectCard.vue'
-import JoinUs from '@/component/JoinUs.vue'
-import ConactUs from '@/component/ConactUs.vue'
-import MUABanner from '@/component/MUABanner.vue'
+import JoinUs from '@/component/dedicated/JoinUs.vue'
+import ConactUs from '@/component/dedicated/ConactUs.vue'
+import MUABanner from '@/component/dedicated/MUABanner.vue'
 import CountDown from '@/component/CountDown.vue'
 
 import logoText from '@/image/logo/ysumc-text.svg'
@@ -127,11 +131,13 @@ Studio于2009年推出的沙盒类电子游戏。游戏中以“方块”为单�
 </div>
 
 <JoinUs />
+
 <ConactUs />
 
 </div>
 
 <MUABanner />
+
 <CountDown
 :time="new Date('2024/2/10')"
 title="距离下一次惊艳大家还剩下："
