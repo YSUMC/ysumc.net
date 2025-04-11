@@ -12,14 +12,8 @@ import TextCard from '@/component/TextCard.vue'
 
 
 > 感谢闽高联 AB 帮助我将这篇教程转移至 Github Repository.
-> 本教程作者 某个草 ，原文位置 https://hi-ysumc.feishu.cn/wiki/QDJBwtCBEi5eLakfWCvcRtErnvb?from=from_copylink ，请勿二次转载。
->
 > 
-
-
-> [!warning]
->
-
+> 本教程作者 某个草 ，原文位置 [燕大MC社飞书](https://hi-ysumc.feishu.cn/wiki/QDJBwtCBEi5eLakfWCvcRtErnvb?from=from_copylink) ，请勿二次转载。
 
 <TextCard title="“🐶”">
 因为markdown语法不能很好地囊括飞书的富文本体系，所以某些部分会有删改或重新布局。这并不会影响到教程的完整性。<br />

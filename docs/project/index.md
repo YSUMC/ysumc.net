@@ -1,3 +1,7 @@
+---
+layout: BlankPage
+---
+
 <script setup>
 import Hero from '@/component/Hero.vue'
 import CountDown from '@/component/CountDown.vue'

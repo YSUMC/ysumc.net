@@ -87,10 +87,10 @@ function keyHandler(e: any) {
 
 <template>
   <header
-      class="fixed w-full z-30 shadow-lg top-0 transition-all duration-300 ease-in-out"
-      :class="['backdrop-blur-lg', 'bg-white', 'bg-black-dark'][resColor]"
+      class="fixed w-full z-30 shadow-lg top-0 transition-all duration-300 ease-in-out backdrop-blur-lg"
+      :class="['', 'bg-white/80', 'bg-black-dark/80'][resColor]"
   >
-    <div class="mx-3 md:mx-10 flex items-center justify-between h-10">
+    <div class="mx-3 md:mx-10 flex items-center justify-between h-14">
       <!-- Site branding -->
       <AutoLink
           to="/"
@@ -101,14 +101,13 @@ function keyHandler(e: any) {
             :src="
             resColor === 1 ? logo : logoWhite
           "
-            class="transition-all duration-300 ease-in-out h-6"
+            class="transition-all duration-300 ease-in-out h-8"
             fit="contain"
             alt="YSUMC Logo"/>
-        <span
+        <!-- <span
             class="text-base pl-3 font-ysumc hidden md:inline transition-all duration-300 ease-in-out"
             :class="['text-white', 'text-black', 'text-white'][resColor]"
-        >燕山大学Minecraft学生同好者协会</span
-        >
+        >燕山大学Minecraft学生同好者协会</span> -->
       </AutoLink>
 
       <!-- Desktop navigation -->
@@ -118,7 +117,7 @@ function keyHandler(e: any) {
           <li v-for="i in NavBarList" :key="i.name" class="nav-button">
             <AutoLink
                 :to="i.isMenu ? '' : i.link"
-                class="text-base font-medium hover:text-gray-300 px-3 xl:px-5 py-2 flex items-center transition ease-in-out"
+                class="text-sm font-medium hover:text-gray-300 px-3 xl:px-5 py-2 flex items-center transition ease-in-out"
                 :class="['text-white', 'text-black', 'text-white'][resColor]"
             >
               {{ i.name }}{{ i.isMenu ? ' ▾' : '' }}

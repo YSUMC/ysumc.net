@@ -23,12 +23,12 @@ import CountDownImg from '~/image/index/Countdown.png'
 </script>
 
 <Hero :image=heroImage class="mb-14">
-  <div class="absolute bottom-36 md:top-[23%] left-4 md:left-8">
+  <div class="absolute bottom-36 md:top-[30%] left-4 md:left-14">
     <div class="w-full">
-      <img :src=logoText class="h-20 md:h-32" />
+      <img :src=logoText class="h-20 md:h-24" />
     </div>
     <div
-      class="mt-6 md:mt-16 ml-3 text-[3.2rem] md:text-[5.5rem] text-white font-normal leading-tight font-ysumc"
+      class="mt-6 md:mt-16 ml-3 text-[3.2rem] md:text-[4.8rem] text-white font-normal leading-tight font-ysumc"
     >
       方块虽小，<br />
       亦是精彩之源。
