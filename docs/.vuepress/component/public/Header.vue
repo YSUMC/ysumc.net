@@ -87,7 +87,7 @@ function keyHandler(e: any) {
 
 <template>
   <header
-      class="fixed w-full z-30 shadow-lg top-0 transition-all duration-300 ease-in-out backdrop-blur-lg"
+      class="fixed w-full z-30 shadow-md top-0 transition-all duration-300 ease-in-out backdrop-blur-lg"
       :class="['', 'bg-white/80', 'bg-black-dark/80'][resColor]"
   >
     <div class="mx-3 md:mx-10 flex items-center justify-between h-14">
