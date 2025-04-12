@@ -3,7 +3,7 @@ import {defineUserConfig} from 'vuepress'
 import {viteBundler} from '@vuepress/bundler-vite'
 import {getDirname, path} from 'vuepress/utils'
 import {activeHeaderLinksPlugin} from '@vuepress/plugin-active-header-links'
-import {mdEnhancePlugin} from "vuepress-plugin-md-enhance";
+import { markdownStylizePlugin } from '@vuepress/plugin-markdown-stylize'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -72,9 +72,12 @@ export default defineUserConfig({
         }
       ],
     }),
-    mdEnhancePlugin({
-      // Enable attrs support
+    
+    markdownStylizePlugin({
       attrs: true,
+      sub: true,
+      sup: true,
+      mark: true,
     }),
   ],
 

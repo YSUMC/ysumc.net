@@ -37,7 +37,7 @@ provide('setNavBar', setNavBar);
     :tags="frontmatter.tags"
   />
   <main class="grow bg-base-white w-full my-8 md:my-16">
-    <Content class="prose mx-auto w-11/12 md:w-3/4" />
+    <Content class="prose max-w-7xl mx-auto w-11/12 md:w-3/4" />
   </main>
   <BackTop />
   <Footer />
@@ -46,7 +46,6 @@ provide('setNavBar', setNavBar);
 <style lang="scss">
 main {
   .prose {
-    @apply max-w-7xl md:mx-auto;
     h2 {
       font-family: var(--font-ysumc);
       @apply text-3xl md:text-4xl mb-4;
