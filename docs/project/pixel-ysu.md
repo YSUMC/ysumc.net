@@ -8,6 +8,7 @@ subtitle: 三千一百万方块打造的虚拟校园
 ---
 <script setup>
 import TextCard from '@/component/TextCard.vue'
+import gf from '~/image/gf.png'
 </script>
 
 
@@ -16,6 +17,16 @@ import TextCard from '@/component/TextCard.vue'
 > 本教程作者 某个草 ，原文位置 [燕大MC社飞书](https://hi-ysumc.feishu.cn/wiki/QDJBwtCBEi5eLakfWCvcRtErnvb?from=from_copylink) ，请勿二次转载。
 
 <TextCard title="“🐶”">
+因为markdown语法不能很好地囊括飞书的富文本体系，所以某些部分会有删改或重新布局。这并不会影响到教程的完整性。<br />
+若您想参考完整教程，请前往上方链接。
+</TextCard>
+
+<TextCard title="“🐶”" :action-button="{text:'带操作按钮', link:'#'}">
+因为markdown语法不能很好地囊括飞书的富文本体系，所以某些部分会有删改或重新布局。这并不会影响到教程的完整性。<br />
+若您想参考完整教程，请前往上方链接。
+</TextCard>
+
+<TextCard title="“🐶”" :action-button="{text:'按钮和底图', link:'#'}" :image="gf" button-offset="6em">
 因为markdown语法不能很好地囊括飞书的富文本体系，所以某些部分会有删改或重新布局。这并不会影响到教程的完整性。<br />
 若您想参考完整教程，请前往上方链接。
 </TextCard>

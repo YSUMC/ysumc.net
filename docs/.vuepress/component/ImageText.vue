@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <span class="text-xs text-gray my-2 mx-2 xl:mx-0 block" :align="props.align">
+  <span class="not-prose text-xs text-gray my-2 mx-2 xl:mx-0 block" :align="props.align">
     <slot></slot>
   </span>
 </template>

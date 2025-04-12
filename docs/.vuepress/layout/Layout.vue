@@ -36,8 +36,8 @@ provide('setNavBar', setNavBar);
     :text="frontmatter.subtitle"
     :tags="frontmatter.tags"
   />
-  <main class="grow bg-base-white w-full my-16">
-    <Content class="prose mx-auto w-3/4" />
+  <main class="grow bg-base-white w-full my-8 md:my-16">
+    <Content class="prose mx-auto w-11/12 md:w-3/4" />
   </main>
   <BackTop />
   <Footer />

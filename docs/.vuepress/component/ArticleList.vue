@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="article-wrapper">
+  <div class="article-wrapper not-prose">
     <div v-if="!items.length">Nothing in here.</div>
 
     <article

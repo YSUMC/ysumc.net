@@ -25,7 +25,7 @@ const link = [
 </script>
 
 <template>
-  <div class="w-full bg-neutral-50 pb-14">
+  <div class="not-prose w-full bg-neutral-50 pb-14">
     <div class="max-w-7xl mx-6 xl:mx-auto md:flex md:items-center">
       <p
           class="mr-auto text-base md:text-xl leading-normal font-normal text-center md:text-left"

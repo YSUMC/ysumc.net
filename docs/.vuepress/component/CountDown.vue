@@ -57,7 +57,7 @@ function updateTime() {
 
 <template>
   <div
-      class="w-full"
+      class="w-full not-prose"
       :class="props.image ? 'jarallax py-14' : 'py-0'"
       ref="jarallaxitem"
   >

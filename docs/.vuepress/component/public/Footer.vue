@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import footerBkg from '@/image/footer-bkg.png'
-import logoText from '@/image/logo/ysumc-text.svg'
-import AutoLink from "./AutoLink.vue";
+import footerBkg from '@/image/footer-bkg.png';
+import logoText from '@/image/logo/ysumc-text.svg';
+import AutoLink from './AutoLink.vue';
 
 const content = [
   {
@@ -32,11 +32,9 @@ const content = [
       { name: 'MUA高校联盟', link: 'https://www.mualliance.ltd/' },
       { name: '上海交通大学', link: 'https://mc.sjtu.cn/' },
       { name: '中南大学', link: 'https://csu-mc.magicalsheep.cn/' },
-      {
-        name: '西安建筑科技大学',
-        link: 'https://www.xauatcraft.com/',
-      },
+      { name: '西安建筑科技大学', link: 'https://www.xauatcraft.com/' },
       { name: '塔里木大学', link: 'https://www.tarucraft.club' },
+      { name: '上海应用技术大学', link: 'https://www.sitmc.club' },
     ],
   },
   {
@@ -49,7 +47,7 @@ const content = [
       },
     ],
   },
-]
+];
 const externalLink = [
   {
     name: 'skin',
@@ -67,27 +65,27 @@ const externalLink = [
     icon: 'socicon-qq',
   },
   { name: 'afd', link: 'https://afdian.net/a/yusmc/', icon: 'mobi-mbri-cash' },
-]
+];
 </script>
 
 <template>
   <footer
-      class="bg-no-repeat bg-center bg-cover text-white py-4"
-      :style="{ 'background-image': `url(${footerBkg})` }"
+    class="bg-no-repeat bg-center bg-cover text-white py-4"
+    :style="{ 'background-image': `url(${footerBkg})` }"
   >
     <div class="max-w-7xl mx-auto px-6 md:px-4">
       <div class="grid grid-cols-12 pb-4 pt-8">
         <!-- First block -->
         <div class="col-span-6 md:col-span-3 flex flex-col md:justify-between">
           <AutoLink to="/" class="inline-block" aria-label="YSUMC">
-            <img :src=logoText class="w-96"  alt="YSUMC Logo"/>
+            <img :src="logoText" class="w-96" alt="YSUMC Logo" />
           </AutoLink>
           <div class="flex md:gap-2 mt-4 md:mt-0">
             <a
-                v-for="i in externalLink"
-                class="w-10 h-10 flex items-center justify-center"
-                :href="i.link"
-                target="_blank"
+              v-for="i in externalLink"
+              class="w-10 h-10 flex items-center justify-center"
+              :href="i.link"
+              target="_blank"
             >
               <span :class="i.icon" class="text-xl"></span>
             </a>
@@ -95,16 +93,16 @@ const externalLink = [
         </div>
         <div class="col-span-6 md:col-span-3" />
         <div
-            class="col-span-12 md:col-span-2 my-3 md:my-0"
-            v-for="i in content"
-            :key="i.title"
+          class="col-span-12 md:col-span-2 my-3 md:my-0"
+          v-for="i in content"
+          :key="i.title"
         >
           <h6 class="text-gray-800 font-bold mb-3">{{ i.title }}</h6>
           <ul class="text-sm">
             <li class="mb-2" v-for="j in i.items" :key="j.name">
               <AutoLink
-                  :to="j.link"
-                  class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
+                :to="j.link"
+                class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
               >
                 {{ j.name }}
               </AutoLink>
@@ -115,7 +113,7 @@ const externalLink = [
 
       <!-- Bottom area -->
       <div
-          class="md:flex md:items-center md:justify-between py-4 border-t border-gray text-gray"
+        class="md:flex md:items-center md:justify-between py-4 border-t border-gray text-gray"
       >
         <div class="text-[0.7rem] md:text-sm mr-4 content-start">
           {{ new Date().getFullYear() }}{{ ' ' }}
@@ -124,7 +122,7 @@ const externalLink = [
         </div>
         <div class="text-[0.7rem] md:text-sm mr-4 content-end mt-2 md:mt-0">
           <a href="https://beian.miit.gov.cn" target="_blank"
-          >黔ICP备2022009898号-1</a
+            >黔ICP备2022009898号-1</a
           >
         </div>
       </div>

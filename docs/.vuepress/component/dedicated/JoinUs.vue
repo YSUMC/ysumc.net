@@ -23,7 +23,7 @@ const card = [
 </script>
 
 <template>
-  <div class="w-full py-14">
+  <div class="not-prose w-full py-14">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-ysumc">加入我们！</h2>
       <p class="text-base md:text-xl mt-3">我们不收取任何费用！</p>

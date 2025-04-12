@@ -9,7 +9,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="shadow-lg overflow-hidden bg-white flex flex-col">
+  <div class="not-prose shadow-lg overflow-hidden bg-white flex flex-col">
     <img :src="props.image" class="w-full aspect-video object-cover" alt="图片"/>
     <div class="pt-8 px-8">
       <h3 class="text-xl leading-normal text-center">

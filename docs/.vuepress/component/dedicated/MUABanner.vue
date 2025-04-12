@@ -23,7 +23,7 @@ const link = [
 </script>
 
 <template>
-  <div class="w-full py-14" :class="dark ? 'bg-gray4' : 'bg-white'">
+  <div class="not-prose w-full py-14" :class="dark ? 'bg-gray4' : 'bg-white'">
     <div
         class="max-w-7xl flex items-center mx-6 xl:mx-auto md:flex-row flex-col"
     >

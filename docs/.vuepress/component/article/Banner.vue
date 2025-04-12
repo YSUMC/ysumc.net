@@ -67,7 +67,7 @@ function handleScroll() {
 <template>
   <div class="w-full relative overflow-hidden" ref="target">
     <div
-        class="relative jarallax flex items-end justify-left pl-32 pb-16"
+        class="relative jarallax flex items-end justify-left px-4 md:px-32 pb-8 md:pb-16"
         :class="props.fullHight ? 'h-dvh' : 'h-96'"
         ref="jarallaxItem"
     >
@@ -79,13 +79,13 @@ function handleScroll() {
           alt="hero image"
       />
       <div v-if="title || text" class="text-white">
-        <h1 v-if="title" class="text-5xl font-ysumc">{{ props.title }}</h1>
-        <p v-if="text" v-html="props.text" class="text-xl mt-4"></p>
+        <h1 v-if="title" class="text-2xl md:text-5xl font-ysumc">{{ props.title }}</h1>
+        <p v-if="text" v-html="props.text" class="text-base md:text-xl mt-4"></p>
         <div class="flex flex-wrap mt-6 gap-4">
           <span
               v-for="tag in props.tags"
               :key="tag"
-              class="inline-block bg-white text-black rounded px-4 py-2 font-semibold"
+              class="inline-block bg-white text-black rounded px-4 py-2 font-semibold text-sm md:text-base"
           >
             {{ tag }}
           </span>
