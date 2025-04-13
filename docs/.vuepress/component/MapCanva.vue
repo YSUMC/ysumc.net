@@ -18,6 +18,10 @@ const mapOptions = {
   ],
 };
 
+const points = ref([
+  [2370, 3890, '西里西亚智能科学与工程学院']
+]);
+
 onMounted(() => {
   map.value = L.map(mapContainer.value, mapOptions);
 
@@ -35,6 +39,10 @@ onMounted(() => {
     maxNativeZoom: 4,
   }).addTo(map.value);
 
+  points.value.forEach(([x, y, label]) => {
+    const marker = L.marker([-x / 16, y / 16]).addTo(map.value);
+    marker.bindPopup(label);
+  });
   // map.value.setMaxBounds(imageBounds);
   // map.value.setView([29.5, 16.5], 0);
 });
@@ -43,3 +51,9 @@ onMounted(() => {
 <template>
   <div ref="mapContainer" class="h-screen"></div>
 </template>
+
+<style>
+.leaflet-top {
+  @apply mt-16
+}
+</style>
