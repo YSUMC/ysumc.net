@@ -6,8 +6,9 @@
   font-family: 'YSUMC';
   font-weight: 400;
   src:
-          url(../asset/font/YSUMC_tandard_Minecraft_Font.woff2) format(woff2),
-          url(../asset/font/YSUMC_tandard_Minecraft_Font.woff) format(woff);
+    url(../asset/font/YSUMC_Standard_Minecraft_Font.woff2) format(woff2),
+    // url(../asset/font/YSUMC_Standard_Minecraft_Font.ttf) format(truetype),
+    url(../asset/font/YSUMC_Standard_Minecraft_Font.woff) format(woff);
   font-display: swap;
 }
 

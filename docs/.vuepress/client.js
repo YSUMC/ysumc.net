@@ -1,7 +1,7 @@
 import {defineClientConfig} from 'vuepress/client'
 import Layout from "./layout/Layout.vue";
 import BlankPage from "./layout/BlankPage.vue";
-import AutoLink from "./component/public/AutoLink.vue";
+import Blank from "./layout/Blank.vue";
 
 import './style/index.scss'
 
@@ -10,6 +10,7 @@ export default defineClientConfig({
   layouts: {
     Layout,
     BlankPage,
+    Blank
   },
   async enhance({app}) {
     if (!__VUEPRESS_SSR__) {

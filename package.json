@@ -8,7 +8,8 @@
     "build": "vuepress build docs",
     "clean-dev": "vuepress dev docs --clean-cache",
     "dev": "vuepress dev docs",
-    "update-package": "pnpm dlx vp-update"
+    "update-package": "pnpm dlx vp-update",
+    "maptiler": "python maptiler/main.py"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
-    "jarallax": "^2.2.1"
+    "jarallax": "^2.2.1",
+    "leaflet": "^1.9.4"
   }
 }

@@ -10,3 +10,5 @@ cache
 .cache
 # VuePress 默认构建生成的静态文件目录
 .DS_Store
+
+docs/.vuepress/public/map/tiles
