@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {inject} from 'vue'
 
 const setNavBar = inject('setNavBar')
+const L = inject('leaflet')
 
 import { onMounted, ref } from 'vue';
 
@@ -27,6 +27,9 @@ const points = ref([
 ]);
 
 onMounted(() => {
+  if (__VUEPRESS_SSR__) {
+    return
+  }
   map.value = L.map(mapContainer.value, mapOptions);
 
   const imageBounds = [

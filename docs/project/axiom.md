@@ -44,19 +44,19 @@ Axiom 会在创造模式的物品栏中增加一个“功能”栏位，这代�
 
 
 
-<img src="static/NWxwbhOLXownLkx5pckcP0djn0e.png" style="zoom:50%;" />
+<!-- <img src="static/NWxwbhOLXownLkx5pckcP0djn0e.png" style="zoom:50%;" /> -->
 
 **游戏内功能选择**
 当玩家物品栏的选择光标在“功能”栏位上时，按住 `LAlt` 键，可以呼出 Axiom 的游戏内功能选择菜单，松开 `LAlt` 键菜单即关闭。
 
-<img src="static/DTACbBzWnoQmSsxOOPccHTRvn5f.png" style="zoom:50%;" />
+<!-- <img src="static/DTACbBzWnoQmSsxOOPccHTRvn5f.png" style="zoom:50%;" /> -->
 
 **游戏内编辑选项**
 当玩家物品栏的选择光标不在“功能”栏位上时，按住 `LAlt` 键，可以呼出 Axiom 的创造模式附加菜单，松开 `LAlt` 键菜单即关闭。
 
 
 
-<img src="static/UCW3beI0noFTgGxHFxrcTzz7nUe.png" style="zoom:50%;" />
+<!-- <img src="static/UCW3beI0noFTgGxHFxrcTzz7nUe.png" style="zoom:50%;" /> -->
 
 如果你想了解更多，请参看本知识库的《游戏内编辑功能》。
 
@@ -72,7 +72,7 @@ Axiom 最具特色的功能就是嵌入在游戏中，类似于游戏引擎或�
 
 按下 `Rshift` 键，即可进入 Axiom 的编辑器功能。再次按下 `Rshift` 键退出该功能。
 
-<img src="static/Idafbu9w3oeK8rxkeXVcPXkAnfe.png" style="zoom: 33%;" />
+<!-- <img src="static/Idafbu9w3oeK8rxkeXVcPXkAnfe.png" style="zoom: 33%;" /> -->
 
 ## 展示实体编辑功能
 
@@ -84,7 +84,7 @@ Axiom 最具特色的功能就是嵌入在游戏中，类似于游戏引擎或�
 
 如果你想了解更多，请参看《展示实体编辑功能》。
 
-<img src="static/YpU6bfBvsokL40xf53jcgJponTc.png" style="zoom: 67%;" />
+<!-- <img src="static/YpU6bfBvsokL40xf53jcgJponTc.png" style="zoom: 67%;" /> -->
 
 
 

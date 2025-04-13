@@ -15,7 +15,9 @@ export default defineClientConfig({
   async enhance({app}) {
     if (!__VUEPRESS_SSR__) {
       const jarallax = await import('jarallax')
+      const leaflet = await import('leaflet')
       app.provide('jarallax', jarallax)
+      app.provide('leaflet', leaflet)
     }
   }
 })
