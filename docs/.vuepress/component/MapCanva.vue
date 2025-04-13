@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import {inject} from 'vue'
+
+const setNavBar = inject('setNavBar')
 
 import { onMounted, ref } from 'vue';
 
@@ -43,8 +46,15 @@ onMounted(() => {
     const marker = L.marker([-x / 16, y / 16]).addTo(map.value);
     marker.bindPopup(label);
   });
-  // map.value.setMaxBounds(imageBounds);
-  // map.value.setView([29.5, 16.5], 0);
+  
+  map.value.on('zoomend', () => {
+    const currentZoom = map.value.getZoom();
+    if (currentZoom === 0 || currentZoom === 1) {
+      setNavBar(false);
+    } else {
+      setNavBar(true);
+    }
+  });
 });
 </script>
 
