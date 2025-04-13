@@ -22,12 +22,19 @@ def generate_tiles(image_path, output_dir, tile_size, max_zoom):
     new_img.paste(img, (0, 0))
 
     # 遍历缩放等级
-    for zoom in range(max_zoom + 1):
+    for zoom in range(max_zoom + 2):
         # 缩放图片
-        scale = 2 ** (max_zoom - zoom)
-        zoom_width = new_img.width // scale
-        zoom_height = new_img.height // scale
-        resized_img = new_img.resize((zoom_width, zoom_height), Image.Resampling.LANCZOS)
+        if zoom < max_zoom:
+            scale = 2 ** (max_zoom - zoom)
+            zoom_width = new_img.width // scale
+            zoom_height = new_img.height // scale
+            resized_img = new_img.resize((zoom_width, zoom_height), Image.Resampling.LANCZOS)
+        else:
+            # 缩放级别 5，使用临近采样放大原始图片
+            scale = 2 ** (zoom - max_zoom)
+            zoom_width = new_img.width * scale
+            zoom_height = new_img.height * scale
+            resized_img = new_img.resize((zoom_width, zoom_height), Image.Resampling.LANCZOS)
 
         # 创建当前缩放等级的目录
         zoom_dir = os.path.join(output_dir, f"zoom_{zoom}")
@@ -42,8 +49,8 @@ def generate_tiles(image_path, output_dir, tile_size, max_zoom):
                 tile = resized_img.crop(box)
 
                 # 保存瓦片
-                tile_filename = os.path.join(zoom_dir, f"tile_{x // tile_size[0]}_{y // tile_size[1]}.png")
-                tile.save(tile_filename)
+                tile_filename = os.path.join(zoom_dir, f"tile_{x // tile_size[0]}_{y // tile_size[1]}.webp")
+                tile.save(tile_filename, format="WEBP")
                 tile_count += 1
 
         print(f"缩放等级 {zoom} 完成，共生成 {tile_count} 个瓦片。")

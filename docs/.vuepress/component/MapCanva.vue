@@ -11,8 +11,9 @@ const map = ref(null);
 const mapContainer = ref(null);
 const mapOptions = {
   crs: L.CRS.Simple,
-  center: [-270, 480], // Center adjusted to the middle of the image bounds
+  center: [-230, 260], // Center adjusted to the middle of the image bounds
   zoom: 2,
+  zoomSnap: 0.5,
   minZoom: 0,
   maxZoom: 4,
   maxBounds: [
@@ -32,14 +33,15 @@ onMounted(() => {
     [-540, 0],
     [0, 960],
   ];
-  const tileLayerUrl = '/map/tiles/zoom_{z}/tile_{x}_{y}.png'; // Replace with your tile URL pattern
+  const tileLayerUrl = '/map/tiles/zoom_{z}/tile_{x}_{y}.webp'; // Replace with your tile URL pattern
   L.tileLayer(tileLayerUrl, {
     bounds: imageBounds,
     minZoom: 0,
-    maxZoom: 4,
+    maxZoom: 5,
     noWrap: true,
     tileSize: 256,
     maxNativeZoom: 4,
+    detectRetina: true,
   }).addTo(map.value);
 
   points.value.forEach(([x, y, label]) => {
