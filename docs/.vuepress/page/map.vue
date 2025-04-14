@@ -25,7 +25,7 @@ function onZoomEnd(zoom) {
 
 <template>
   <div class="h-dvh">
-    <MapCanva class="h-full" @zoomend="onZoomEnd" />
+    <MapCanva @zoomend="onZoomEnd" />
     <div
       class="w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur py-8 px-16 z-[10000] flex flex-row items-center justify-between transition-transform duration-500"
       :class="{ 'translate-y-full': !showTitleBar, 'translate-y-0': showTitleBar }"
@@ -42,11 +42,11 @@ function onZoomEnd(zoom) {
       </div>
       <div class="flex flex-row items-center gap-8">
         <div>
-          <img src="/map/mapicons/left-click.svg" class="h-16 mx-auto" />
+          <img src="@/asset/icons/left-click.svg" class="h-16 mx-auto" />
           <p class="mt-4 text-sm">按住左键拖动以移动</p>
         </div>
         <div>
-          <img src="/map/mapicons/middle-click.svg" class="h-16 mx-auto" />
+          <img src="@/asset/icons/middle-click.svg" class="h-16 mx-auto" />
           <p class="mt-4 text-sm">鼠标滚轮可缩放大小</p>
         </div>
       </div>
