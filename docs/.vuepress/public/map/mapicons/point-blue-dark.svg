@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 200 200">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+        filter: url(#drop-shadow-1);
+      }
+
+      .st1 {
+        fill: #1f296a;
+      }
+    </style>
+    <filter id="drop-shadow-1" x="27.5" y="10.5" width="156" height="196" filterUnits="userSpaceOnUse">
+      <feOffset dx="5.7" dy="8.5"/>
+      <feGaussianBlur result="blur" stdDeviation="8.5"/>
+      <feFlood flood-color="#000" flood-opacity=".6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path class="st0" d="M100,27.6c-28.9,0-52.4,24.1-52.4,53.8s28,66,49.5,89.8c1.5,1.7,4.1,1.7,5.6,0,21.5-23.7,49.5-61.4,49.5-89.8s-23.4-53.8-52.3-53.8ZM100,98c-11.6,0-20.9-9.3-20.9-20.9s9.3-20.9,20.9-20.9,20.9,9.3,20.9,20.9-9.3,20.9-20.9,20.9Z"/>
+  <circle class="st1" cx="100" cy="77.1" r="20.9"/>
+</svg>
