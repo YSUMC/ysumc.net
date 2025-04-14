@@ -17,7 +17,7 @@ const L = inject('leaflet');
 
 import { onMounted, ref, defineEmits } from 'vue';
 
-const map = ref(null);
+var map = {};
 const mapContainer = ref(null);
 const mapOptions = {
   crs: L.CRS.Simple,
@@ -180,13 +180,14 @@ const eggLayer = L.layerGroup(
     )
 )
 
-const emit = defineEmits(['zoomend']);
+const emit = defineEmits(['zoom']);
 
 onMounted(() => {
   if (__VUEPRESS_SSR__) {
     return;
   }
-  map.value = L.map(mapContainer.value, mapOptions);
+
+  map = L.map(mapContainer.value, mapOptions);
 
   const imageBounds = [
     [-540, 0],
@@ -201,12 +202,12 @@ onMounted(() => {
     tileSize: 256,
     maxNativeZoom: 4,
     detectRetina: true,
-  }).addTo(map.value);
+  }).addTo(map);
 
-  map.value.addLayer(markerLayer);
+  map.addLayer(markerLayer);
 
-  map.value.on('zoomend', () => {
-    emit('zoomend', map.value.getZoom());
+  map.on('zoomend', () => {
+    emit('zoom', map.getZoom());
   });
 });
 
@@ -218,18 +219,19 @@ function togglePoints() {
 
   eggCount.value++;
   if (showPoints.value) {
-    map.value.removeLayer(markerLayer);
+    map.removeLayer(markerLayer);
     showPoints.value = false;
   } else {
-    map.value.addLayer(markerLayer);
+    map.addLayer(markerLayer);
     showPoints.value = true;
   }
 
+  if (eggCount.value > 10) return;
   // 控制彩蛋 Marker 的显示
   if (eggCount.value === 9) {
-    eggLayer.addTo(map.value);
-  } else if (eggCount.value > 10) {
-    map.value.removeLayer(eggLayer);
+    map.addLayer(eggLayer);
+  } else if (eggCount.value === 10) {
+    map.removeLayer(eggLayer);
   }
 }
 </script>

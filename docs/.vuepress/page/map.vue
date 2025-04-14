@@ -11,7 +11,7 @@ onMounted(() => {
 const showTitleBar = ref(true);
 const zoomLevel = ref(1);
 
-function onZoomEnd(zoom) {
+function onZoom(zoom) {
   zoomLevel.value = zoomLevel;
   if (zoom <= 1) {
     setNavBar(false);
@@ -25,9 +25,9 @@ function onZoomEnd(zoom) {
 
 <template>
   <div class="h-dvh">
-    <MapCanva @zoomend="onZoomEnd" />
+    <MapCanva @zoom="onZoom" />
     <div
-      class="w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur py-8 px-16 z-[10000] flex flex-row items-center justify-between transition-transform duration-500"
+      class="w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur py-8 px-16 z-[10000] flex flex-row items-center justify-between transition-transform duration-200"
       :class="{ 'translate-y-full': !showTitleBar, 'translate-y-0': showTitleBar }"
     >
       <div>
