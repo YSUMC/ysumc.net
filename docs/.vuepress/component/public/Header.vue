@@ -33,6 +33,11 @@ const NavBarList = [
     link: '/project/',
   },
   {
+    name: '地图',
+    isMenu: false,
+    link: '/map.html',
+  },
+  {
     name: '资料',
     isMenu: true,
     contents: [
