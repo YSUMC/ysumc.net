@@ -14,7 +14,7 @@ var map = {};
 var markerLayer = {};
 var eggLayer = {};
 
-const emit = defineEmits(['zoom']);
+const emit = defineEmits(['zoom','pointclick','mapclick']);
 
 onMounted(async () => {
   const mapData = await import('@/mapdata/dataloader.js');
@@ -26,6 +26,16 @@ onMounted(async () => {
 
   map.addLayer(mapData.mapLayer)
   map.addLayer(mapData.markerLayer);
+
+  mapData.markers.forEach((marker) => {
+    marker.on('click', () => {
+      emit('pointclick', marker.rawPoint);
+    });
+  });
+
+  map.on('click', (e) => {
+    emit('mapclick', e.latlng);
+  });
 
   map.on('zoomend', () => {
     emit('zoom', map.getZoom());
@@ -61,20 +71,6 @@ function togglePoints() {
       <img :src="showPoints ? iconDisablePoint : iconEnablePoint" class="h-[1.4rem]" />
     </button>
     <div ref="mapContainer" class="h-full"></div>
-    <div
-      class="h-40 w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur py-8 px-16 z-[10000] flex flex-row items-center justify-between transition-transform duration-200">
-      <div>
-        <h1 class="font-ysumc text-2xl mb-4">
-          燕山大学图书馆（西）
-        </h1>
-        <span class="inline-block bg-blue text-white rounded px-4 py-2 font-semibold text-sm md:text-base">
-          教学建筑
-        </span>
-      </div>
-      <div class="flex flex-row items-center gap-8 text-right">
-        2022年竣工，是燕山大学在新世纪下竣工的最大的建筑。<br />在复原计划中，我们特意将其放在最后复原，与东校区图书馆对账，有始有终。
-      </div>
-    </div>
   </div>
 </template>
 

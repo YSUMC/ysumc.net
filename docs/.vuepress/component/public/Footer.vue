@@ -64,7 +64,7 @@ const externalLink = [
     link: 'https://jq.qq.com/?_wv=1027&k=NLcAidqm',
     icon: 'socicon-qq',
   },
-  { name: 'afd', link: 'https://afdian.net/a/yusmc/', icon: 'mobi-mbri-cash' },
+  { name: 'afd', link: 'https://afdian.com/a/yusmc/', icon: 'mobi-mbri-cash' },
 ];
 </script>
 
@@ -122,7 +122,7 @@ const externalLink = [
         </div>
         <div class="text-[0.7rem] md:text-sm mr-4 content-end mt-2 md:mt-0">
           <a href="https://beian.miit.gov.cn" target="_blank"
-            >黔ICP备2022009898号-1</a
+            >黔ICP备2022009898号-2</a
           >
         </div>
       </div>

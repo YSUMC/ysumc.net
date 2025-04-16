@@ -33,13 +33,16 @@ const pointIcons = {};
   });
 });
 
+export const markers = [];
+
 export const markerLayer = L.layerGroup(
   points.map(p => {
     const marker = L.marker([-p.position[1] / 16, p.position[0] / 16], {
-      icon: pointIcons[p.color],
+      icon: pointIcons[p.color] || pointIcons.blue,
     });
-    marker.bindPopup(p.title);
-    marker.on('click', () => console.log('123'))
+    // marker.bindPopup(p.title);
+    marker.rawPoint = p;
+    markers.push(marker);
     return marker;
   })
 )

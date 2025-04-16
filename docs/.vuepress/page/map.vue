@@ -8,39 +8,77 @@ onMounted(() => {
   setNavBar(false);
 });
 
-const showTitleBar = ref(true);
-const zoomLevel = ref(1);
+const showBar = ref(true);
+const barIsTitle = ref(true);
+
+const barTitle = ref('燕山大学图书馆（西）');
+const barTags = ref(['教学建筑']);
+const barText = ref('2022年竣工，是燕山大学在新世纪下竣工的最大的建筑。<br />在复原计划中，我们特意将其放在最后复原，与东校区图书馆对账，有始有终。');
+const pointColor = ref('blue');
+
+const colorList = {
+  blue: '#66cccc',
+  blueDark: '#1f296a',
+  red: '#cc6666',
+  orange: '#d36839',
+  gray: '#777777',
+  redDark: '#9c292d',
+  gate: '#1f296a'
+}
 
 function onZoom(zoom) {
-  zoomLevel.value = zoomLevel;
   if (zoom <= 1) {
     setNavBar(false);
-    showTitleBar.value = true;
+    barIsTitle.value = true;
+    showBar.value = true;
   } else {
     setNavBar(true);
-    showTitleBar.value = false;
+    if (!barIsTitle.value) return;
+    showBar.value = false;
   }
+}
+
+function onPointclick(point) {
+  barIsTitle.value = false;
+  barTitle.value = point.title;
+  barTags.value = point.label;
+  barText.value = point.text;
+  pointColor.value = point.color;
+  showBar.value = true;
+}
+
+function onMapclick(latlng) {
+  console.log(latlng)
+  if (barIsTitle.value) return;
+  showBar.value ? showBar.value = false : null;
 }
 </script>
 
 <template>
   <div class="h-dvh">
-    <MapCanva @zoom="onZoom" />
+    <MapCanva @zoom="onZoom" @pointclick="onPointclick" @mapclick="onMapclick" />
     <div
-      class="w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur py-8 px-16 z-[10000] flex flex-row items-center justify-between transition-transform duration-200"
-      :class="{ 'translate-y-full': !showTitleBar, 'translate-y-0': showTitleBar }"
-    >
+      class="w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur py-6 md:py-8 px-4 md:px-16 z-[10000] flex flex-col md:flex-row md:items-center md:justify-between transition-transform duration-200"
+      :class="{ 'translate-y-full': !showBar, 'translate-y-0': showBar }">
       <div>
-        <h1 class="font-ysumc text-2xl mb-4">
-          《像素燕大：燕山大学复原计划》全导览图（2024）
+        <h1 class="font-ysumc text-xl md:text-2xl mb-2 md:mb-4">
+          {{ barIsTitle ? '《像素燕大：燕山大学复原计划》全导览图（2024）' : barTitle }}
         </h1>
-        <p>
+        <p v-show="barIsTitle" class="text-sm md:text-base">
           本图按燕山大学2024年5月时的燕山大学复原，在当时未建成的建筑按已完成计，蓝本为其效果图。<br />
           本图内景行路围地和不属于燕山大学行政管理范围内的建筑均未予复原。<br />
           本图的园林设计不能准确反映燕山大学实际的园林设计。<br />
         </p>
+        <div v-show="!barIsTitle">
+          <span v-for="i in barTags" :key="i"
+            class="inline-block text-white rounded px-3 md:px-4 py-1.5 md:py-2 font-bold text-sm md:text-base" :style="{
+              backgroundColor: colorList[pointColor],
+            }">
+            {{ i }}
+          </span>
+        </div>
       </div>
-      <div class="flex flex-row items-center gap-8">
+      <div v-show="barIsTitle" class="hidden lg:flex flex-row items-center gap-8 ">
         <div>
           <img src="@/asset/icons/left-click.svg" class="h-16 mx-auto" />
           <p class="mt-4 text-sm">按住左键拖动以移动</p>
@@ -50,6 +88,7 @@ function onZoom(zoom) {
           <p class="mt-4 text-sm">鼠标滚轮可缩放大小</p>
         </div>
       </div>
+      <div v-show="!barIsTitle" class="text-left md:text-right mt-2 md:mt-0 text-sm md:text-base" v-html="barText"></div>
     </div>
   </div>
 </template>
