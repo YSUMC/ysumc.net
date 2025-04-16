@@ -46,6 +46,7 @@ function onZoom(zoom) {
 function onPointclick(point) {
   barIsTitle.value = false;
   const showBarOld = showBar.value;
+  if (showBarOld && point.title === barTitle.value) return;
   showBar.value = false;
   setTimeout(() => {
     barTitle.value = point.title || '';
