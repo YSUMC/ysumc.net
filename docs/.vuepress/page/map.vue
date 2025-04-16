@@ -11,9 +11,9 @@ onMounted(() => {
 const showBar = ref(true);
 const barIsTitle = ref(true);
 
-const barTitle = ref('燕山大学图书馆（西）');
-const barTags = ref(['教学建筑']);
-const barText = ref('2022年竣工，是燕山大学在新世纪下竣工的最大的建筑。<br />在复原计划中，我们特意将其放在最后复原，与东校区图书馆对账，有始有终。');
+const barTitle = ref('');
+const barTags = ref([]);
+const barText = ref('');
 const pointColor = ref('blue');
 
 const colorList = {
@@ -29,8 +29,13 @@ const colorList = {
 function onZoom(zoom) {
   if (zoom <= 1) {
     setNavBar(false);
-    barIsTitle.value = true;
-    showBar.value = true;
+    if (barIsTitle.value && showBar.value) return;
+    showBar.value = false;
+    const barIsTitleOld = barIsTitle.value;
+    setTimeout(() => {
+      barIsTitle.value = true;
+      showBar.value = true;
+    }, barIsTitleOld ? 0 : 300);
   } else {
     setNavBar(true);
     if (!barIsTitle.value) return;
@@ -40,11 +45,15 @@ function onZoom(zoom) {
 
 function onPointclick(point) {
   barIsTitle.value = false;
-  barTitle.value = point.title;
-  barTags.value = point.label;
-  barText.value = point.text;
-  pointColor.value = point.color;
-  showBar.value = true;
+  const showBarOld = showBar.value;
+  showBar.value = false;
+  setTimeout(() => {
+    barTitle.value = point.title || '';
+    barTags.value = point.label || [];
+    barText.value = point.text || '';
+    pointColor.value = point.color || 'blue';
+    showBar.value = true;
+  }, showBarOld ? 300 : 0);
 }
 
 function onMapclick(latlng) {
@@ -88,7 +97,8 @@ function onMapclick(latlng) {
           <p class="mt-4 text-sm">鼠标滚轮可缩放大小</p>
         </div>
       </div>
-      <div v-show="!barIsTitle" class="text-left md:text-right mt-2 md:mt-0 text-sm md:text-base" v-html="barText"></div>
+      <div v-show="!barIsTitle" class="text-left md:text-right mt-2 md:mt-0 text-sm md:text-base" v-html="barText">
+      </div>
     </div>
   </div>
 </template>

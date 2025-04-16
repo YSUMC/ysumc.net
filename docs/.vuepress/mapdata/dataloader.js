@@ -12,7 +12,7 @@ import iconPointHeart from '@/asset/icons/map_points/point-heart.svg';
 
 export const mapOptions = {
   crs: L.CRS.Simple,
-  // attributionControl: false,
+  attributionControl: false,
   center: [-270, 480],
   zoom: 1,
   zoomSnap: 0.5,
