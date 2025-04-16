@@ -71,10 +71,10 @@ export default [
   },
   {
     position: [3252, 2744],
-    title: '经济管理学院（西区第五教学楼）',
+    title: '经济管理学院',
     color: 'blue',
     label: ['教学楼'],
-    text: '经济管理学院的办公楼与教学楼。',
+    text: '经济管理学院的办公楼与教学楼。<br />二楼有一所由经管院学生自营的咖啡厅。',
   },
   {
     position: [1030, 2968],
@@ -456,7 +456,7 @@ export default [
     title: '文法学院（公共管理学院）（人文馆）',
     color: 'blueDark',
     label: ['行政建筑'],
-    text: '文法学院的办公楼与实验室。',
+    text: '文法学院的办公楼和工作室。',
   },
   {
     position: [12268, 3747],

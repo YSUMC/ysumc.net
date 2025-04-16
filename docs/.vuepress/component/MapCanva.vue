@@ -1,6 +1,6 @@
 <script setup>
 import 'leaflet/dist/leaflet.css';
-import { inject,onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import iconDisablePoint from '@/asset/icons/point_disable.svg';
 import iconEnablePoint from '@/asset/icons/point_enable.svg';
 
@@ -14,7 +14,7 @@ var map = {};
 var markerLayer = {};
 var eggLayer = {};
 
-const emit = defineEmits(['zoom','pointclick','mapclick']);
+const emit = defineEmits(['zoom', 'pointclick', 'mapclick']);
 
 onMounted(async () => {
   const mapData = await import('@/mapdata/dataloader.js');
@@ -74,4 +74,9 @@ function togglePoints() {
   </div>
 </template>
 
-<style></style>
+<style>
+.leaflet-container {
+  background: rgb(43, 55, 65) !important;
+  /* 确保瓦片未加载时显示自定义背景色 */
+}
+</style>
