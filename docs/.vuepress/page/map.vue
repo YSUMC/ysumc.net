@@ -64,7 +64,6 @@ function onPointclick(point) {
 }
 
 function onMapclick(latlng) {
-  console.log(latlng);
   if (barIsTitle.value) return;
   showBar.value ? (showBar.value = false) : null;
 }
@@ -76,7 +75,7 @@ function onMapclick(latlng) {
     <div class="w-dvw fixed shadow-2xl bottom-0 bg-white/90 backdrop-blur
         py-6 md:py-8 px-4 md:px-16 lg:px-20 xl:px-32 z-[10000]
         flex flex-col md:flex-row md:items-center md:justify-between
-        transition-transform duration-200" :class="{ 'translate-y-full': !showBar, 'translate-y-0': showBar }">
+        transition-transform ease-in-out duration-200" :class="{ 'translate-y-full': !showBar, 'translate-y-0': showBar }">
       <div>
         <h1 class="font-ysumc text-xl md:text-2xl mb-2 md:mb-4">
           {{

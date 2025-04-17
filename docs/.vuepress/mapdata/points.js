@@ -5,6 +5,7 @@ export default [
     color: 'blueDark',
     label: ['地标'],
     text: '这个地标现实中并不存在。<br />复原此处时，景行路围地还只是荒地，所以我们选择别出心裁地在这里放下我们的社徽。<br />人要有梦想，万一成真了呢？',
+    buildingType: 'landmark',
   },
   {
     position: [3460, 2000],
@@ -12,6 +13,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '信息工程与技术学院的办公楼，教学楼与实验室。<br />又称实训楼1。',
+    buildingType: 'building',
   },
   {
     position: [3125, 2164],
@@ -19,6 +21,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '信息工程与技术学院的教学楼与实验室。<br />又称实训楼2。',
+    buildingType: 'building',
   },
   {
     position: [3758, 2160],
@@ -26,6 +29,7 @@ export default [
     color: 'blue',
     label: ['行政建筑'],
     text: '理学院办公楼与教学楼。<br />又称实训楼3。',
+    buildingType: 'building',
   },
   {
     position: [3890, 2370],
@@ -33,6 +37,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '西里西亚学院、国际学院的办公楼与教学楼。<br />又称实训楼4。<br />本社早期的办公地点在这里，本网站诞生于此地。',
+    buildingType: 'building',
   },
   {
     position: [3354, 2571],
@@ -40,6 +45,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '该建筑暂未启用。',
+    buildingType: 'building',
   },
   {
     position: [3674, 2501],
@@ -47,6 +53,7 @@ export default [
     color: 'blue',
     label: ['活动中心'],
     text: '该学院于2024年建成并启用。',
+    buildingType: 'building',
   },
   {
     position: [2226, 2979],
@@ -54,6 +61,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '艺术与设计学院的办公楼与教学楼。<br />本复原项目的作者之一便来自艺术学院，其也是燕山大学Minecraft学生同好者协会的创始人之一。<br />燕山大学网络信息协会的办公地点也在这里。',
+    buildingType: 'building',
   },
   {
     position: [2525, 3025],
@@ -61,6 +69,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '艺术与设计学院音乐系的办公楼与教学楼。<br />一楼有燕山大学音乐厅，是西校区最大的礼堂。',
+    buildingType: 'building',
   },
   {
     position: [2720, 3020],
@@ -68,6 +77,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '继续教育学院的办公楼与教学楼。',
+    buildingType: 'building',
   },
   {
     position: [3252, 2744],
@@ -75,30 +85,35 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '经济管理学院的办公楼与教学楼。<br />二楼有一所由经管院学生自营的咖啡厅。',
+    buildingType: 'building',
   },
   {
     position: [1030, 2968],
     title: '第四体育场',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [309, 2935],
     title: '体育馆（西）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [884, 3351],
     title: '风雨球场（网球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [1314, 3367],
     title: '风雨球场（篮球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [406, 3436],
@@ -106,6 +121,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [304, 3691],
@@ -113,6 +129,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1079, 3685],
@@ -120,6 +137,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1000, 3918],
@@ -127,6 +145,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1680, 3884],
@@ -134,6 +153,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1640, 4130],
@@ -141,6 +161,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1622, 4453],
@@ -148,6 +169,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1587, 4734],
@@ -155,6 +177,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [1029, 4535],
@@ -162,6 +185,7 @@ export default [
     color: 'red',
     label: ['服务设施'],
     text: '提供超市、快递驿站、药店、理发、二手书、图文复印、电动车维修等服务。<br />此外，广缘菜鸟驿站也在这里。<br />这里有麦当劳，还需要别的消息吗？',
+    buildingType: 'live',
   },
   {
     position: [1655, 3721],
@@ -169,6 +193,7 @@ export default [
     color: 'orange',
     label: ['餐厅'],
     text: '西校区的一所餐厅。<br />在学生们之间的评价似乎很高。',
+    buildingType: 'canteen',
   },
   {
     position: [2049, 4305],
@@ -176,12 +201,14 @@ export default [
     color: 'red',
     label: ['快递代收点'],
     text: '您可以在这里收取快递。<br />近邻宝快递柜、浴池菜鸟驿站、京东派、顺丰快递在这里。',
+    buildingType: 'live',
   },
   {
     position: [2232, 4315],
     title: '西校区浴池',
     color: 'red',
     label: ['浴池'],
+    buildingType: 'live',
   },
   {
     position: [2369, 4650],
@@ -189,6 +216,7 @@ export default [
     color: 'orange',
     label: ['餐厅'],
     text: '西校区多家餐厅的集合建筑，是燕山大学最大的食堂。<br />西校区民族食堂位于这里。<br />工商、建设银行的存取款机也在这里。东侧有西校区邮政快递收发点。',
+    buildingType: 'canteen',
   },
   {
     position: [2208, 5078],
@@ -196,6 +224,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [2262, 5368],
@@ -203,6 +232,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [3054, 4873],
@@ -210,6 +240,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [3008, 5150],
@@ -217,6 +248,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [2933, 5490],
@@ -224,6 +256,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '在西校区，二至四栋宿舍楼围成一个院子，称作一个组团。<br />不同建设时期的组团会使用不同的颜色来装饰。',
+    buildingType: 'dorm',
   },
   {
     position: [3792, 5822],
@@ -231,6 +264,7 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />7号门是燕大最大的校门，也是西校区正门。',
+    buildingType: 'gate',
   },
   {
     position: [2065, 2047],
@@ -238,6 +272,7 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />',
+    buildingType: 'gate',
   },
   {
     position: [9835, 3905],
@@ -245,6 +280,7 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />',
+    buildingType: 'gate',
   },
   {
     position: [3978, 4723],
@@ -252,6 +288,7 @@ export default [
     color: 'blueDark',
     label: ['地标'],
     text: '东北重型机械学院15000吨水压机的雕塑。<br />15000吨模锻式水压机是燕山大学最瞩目的成就之一，目前正式投入使用的世界上吨位最大、技术水平最高的超大型自由锻水压机。<br />乍一看，这座雕塑没有放在环岛中心，实际上这是为了对准西校区主路的轴线。',
+    buildingType: 'landmark',
   },
   {
     position: [3620, 4408],
@@ -259,6 +296,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '材料科学与工程学院的教学楼与实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [3438, 4234],
@@ -266,6 +304,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '材料科学与工程学院的教学楼与实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [3487, 4125],
@@ -273,6 +312,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '材料科学与工程学院的教学楼与实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [3967, 4180],
@@ -280,6 +320,7 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '材料科学与工程学院的实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [3150, 3960],
@@ -287,6 +328,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '电气工程学院的教学楼与实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [2897, 3802],
@@ -294,6 +336,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '电气工程学院的教学楼与实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [2750, 3680],
@@ -301,6 +344,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '电气工程学院的教学楼与实验室。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [2601, 3550],
@@ -308,6 +352,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '电气工程学院的教学楼与实验室。<br />以前该建筑有一部分属于理学院。后续理学院搬到了新处。<br />西校区教学楼建筑群会根据所属学院和作用使用不同的颜色来装饰。',
+    buildingType: 'lab',
   },
   {
     position: [3486, 3544],
@@ -315,6 +360,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '西校区的综合教学楼。',
+    buildingType: 'building',
   },
   {
     position: [3754, 3718],
@@ -322,6 +368,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '西校区的综合教学楼。',
+    buildingType: 'building',
   },
   {
     position: [4015, 3860],
@@ -329,6 +376,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '西校区的综合教学楼。',
+    buildingType: 'building',
   },
   {
     position: [4158, 4041],
@@ -336,6 +384,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '西校区的综合教学楼。',
+    buildingType: 'building',
   },
   {
     position: [4508, 5080],
@@ -343,6 +392,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '原里仁学院的办公楼，后续环境与化学工程学院，材料科学与工程学院也迁入了该楼。',
+    buildingType: 'building',
   },
   {
     position: [5313, 5103],
@@ -350,6 +400,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '原里仁学院的教学楼，现也被其他学院使用。分为四个区域，是燕山大学最大的教学楼。',
+    buildingType: 'building',
   },
   {
     position: [6045, 5125],
@@ -357,6 +408,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '原里仁学院的阶梯教室，现也被其他学院使用。',
+    buildingType: 'building',
   },
   {
     position: [5300, 5615],
@@ -364,12 +416,14 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '原里仁学院的图文信息楼，现也被其他学院使用。',
+    buildingType: 'building',
   },
   {
     position: [4550, 5655],
     title: '西校区大学生活动中心',
     color: 'blue',
     label: ['活动中心'],
+    buildingType: 'building',
   },
   {
     position: [6650, 5400],
@@ -377,30 +431,35 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '原里仁学院的实验楼，现也被其他学院使用。',
+    buildingType: 'lab',
   },
   {
     position: [6849, 5160],
     title: '风雨球场（网球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [7610, 5210],
     title: '风雨球场（篮球，羽毛球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [8160, 5190],
     title: '风雨球场（五人足球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [7430, 5600],
     title: '第三体育场',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [8277, 3877],
@@ -408,6 +467,7 @@ export default [
     color: 'blue',
     label: ['图书馆'],
     text: '2022年竣工，是燕山大学在新世纪下竣工的最大的建筑。<br />在复原计划中，我们特意将其放在最后复原，与东校区图书馆对账，有始有终。',
+    buildingType: 'library',
   },
   {
     position: [4620, 3705],
@@ -415,6 +475,7 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '于2024下半年开始建设。<br />针对其的复原已写入计划。',
+    buildingType: 'lab',
   },
   {
     position: [7400, 3407],
@@ -422,6 +483,7 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '于2024下半年开始建设。<br />针对其的复原已写入计划。',
+    buildingType: 'lab',
   },
   {
     position: [6490, 4442],
@@ -429,6 +491,7 @@ export default [
     color: 'blueDark',
     label: ['地标'],
     text: '西校区几乎未经开发的山丘，据说以前有电塔，所以叫塔山。<br />塔山东侧有燕山大学机械艺术园，放置着一些退役的机床和一些重型零件制作的艺术品。',
+    buildingType: 'landmark',
   },
   {
     position: [10104, 4626],
@@ -436,6 +499,7 @@ export default [
     color: 'blueDark',
     label: ['地标'],
     text: '连接燕山大学东西校区的立交桥，穿过西环路和原京哈铁路，起源于一场令人心碎的意外。<br />燕宏桥是全国唯一的高校内立交桥，也是燕山大学的名片之一。',
+    buildingType: 'landmark',
   },
   {
     position: [10539, 5046],
@@ -443,6 +507,7 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '燕山大学最新的，也是最大的实验室办公楼。<br />据传是燕山大学攻克了中国商飞C919轴承所需的关键技术，遂使用奖金建设了该建筑，故也叫“奖励楼”。',
+    buildingType: 'lab',
   },
   {
     position: [11394, 4634],
@@ -450,6 +515,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '车辆与能源学院的办公楼与实验室。',
+    buildingType: 'building',
   },
   {
     position: [11913, 4064],
@@ -457,6 +523,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '文法学院的办公楼和工作室。',
+    buildingType: 'building',
   },
   {
     position: [12268, 3747],
@@ -464,24 +531,28 @@ export default [
     color: 'blue',
     label: ['体育场馆'],
     text: '体育学院的办公楼。',
+    buildingType: 'gym',
   },
   {
     position: [12317, 3617],
     title: '风雨球场（羽毛球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [13730, 3794],
     title: '风雨球场（篮球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [13076, 3710],
     title: '第二体育场',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [14519, 3767],
@@ -489,6 +560,7 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />',
+    buildingType: 'gate',
   },
   {
     position: [11272, 4317],
@@ -496,6 +568,7 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />',
+    buildingType: 'gate',
   },
   {
     position: [12314, 4469],
@@ -503,18 +576,21 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '燕山大学东校区附属规划的主体建筑。<br />因为造型需要和不同种类教室的层高差异，第四教学楼从楼层到平面的布置都非常混乱，现在有了指示牌便好多了。<br />此地目前也是马克思学院的办公楼。',
+    buildingType: 'building',
   },
   {
     position: [12807, 4230],
     title: '教职工活动中心',
     color: 'blue',
     label: ['活动中心'],
+    buildingType: 'building',
   },
   {
     position: [11388, 5137],
     title: '重型机械协同创新中心',
     color: 'blue',
     label: ['实验室'],
+    buildingType: 'lab',
   },
   {
     position: [11742, 5422],
@@ -522,6 +598,7 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '机械工程学院，建筑工程与力学学院，车辆与能源工程学院的实验室。<br />燕翔车队的研发实验室也在这里，我们的大学生方程式赛车就从这里驶出。',
+    buildingType: 'lab',
   },
   // { position: [10973, 5565], title: '东校区浴池', color: 'blue' },
   {
@@ -530,24 +607,28 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '燕山大学最高的建筑，也是燕大的地标和名片。因为有21层，所以也叫21世纪楼。<br />复原组曾经因为疏忽将世纪楼做成了22层，西区将近完成时，才发现了这个问题并改正。',
+    buildingType: 'building',
   },
   {
     position: [10378, 5544],
     title: '工程训练中心',
     color: 'blue',
     label: ['实验室'],
+    buildingType: 'lab',
   },
   {
     position: [10844, 5781],
     title: '物理实验中心',
     color: 'blue',
     label: ['实验室'],
+    buildingType: 'lab',
   },
   {
     position: [10196, 5757],
     title: '燕山大学印刷厂',
     color: 'blue',
     label: ['后勤建筑'],
+    buildingType: 'building',
   },
   {
     position: [11452, 6108],
@@ -555,6 +636,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '燕山大学最初的图书馆，现在部分功能已经被西校区图书馆取代，剩余的空间被用于安排校史馆和东北亚古丝绸之路博物馆。<br />在复原计划中，东校区图书馆是第一座被复原的建筑。',
+    buildingType: 'library',
   },
   {
     position: [11267, 6541],
@@ -562,6 +644,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '一座位于燕鸣湖畔独具特色的教学楼。<br />在复原计划中，第三教学楼是第二座被复原的建筑。',
+    buildingType: 'building',
   },
   {
     position: [12515, 6000],
@@ -569,6 +652,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '燕山大学最古老的教学楼，也是最具特色的教学楼。其立面设计成为了燕山大学内许多教学楼的设计本源。<br />对了，我想每一名来自燕山大学东校区的校友都不会忘记第一教学楼那郁郁葱葱的爬山虎。',
+    buildingType: 'building',
   },
   {
     position: [11767, 5947],
@@ -576,6 +660,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '机械工程学院的办公楼与实验室。<br />本复原项目的作者之一便来自机械学院。',
+    buildingType: 'building',
   },
   {
     position: [12331, 5603],
@@ -583,6 +668,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '燕山大学最早的阶梯教室教学楼，几乎被爬山虎完全盖住了。<br />在复原计划中，第二教学楼的资料是最少的，复原组又因为不可抗力无法实地考察，难度很高。',
+    buildingType: 'building',
   },
   {
     position: [13215, 6038],
@@ -590,6 +676,7 @@ export default [
     color: 'blueDark',
     label: ['行政建筑'],
     text: '建筑工程与力学学院的办公楼与实验室。<br />本复原项目的作者之一便来自建工学院，其也是燕山大学Minecraft学生同好者协会的创始人之一。',
+    buildingType: 'building',
   },
   {
     position: [12603, 6360],
@@ -597,6 +684,7 @@ export default [
     color: 'blue',
     label: ['实验室'],
     text: '环境与化学工程学院原办公楼，现为实验室。<br />环境与化学工程学院的办公地点已移动至西校区里仁办公楼。',
+    buildingType: 'lab',
   },
   {
     position: [13925, 5485],
@@ -604,6 +692,7 @@ export default [
     color: 'blue',
     label: ['教学楼'],
     text: '提供学龄前教育的建筑广义上也可以叫教学楼嘛。',
+    buildingType: 'building',
   },
   {
     position: [14525, 6055],
@@ -611,6 +700,7 @@ export default [
     color: 'blue',
     label: ['宾馆'],
     text: '原燕大宾馆，现在被外包管理。<br />但燕大一直使用该宾馆进行招待工作，从未变过。',
+    buildingType: 'building',
   },
   {
     position: [14438, 6391],
@@ -618,6 +708,7 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br /> ',
+    buildingType: 'gate',
   },
   {
     position: [13219, 4934],
@@ -625,24 +716,28 @@ export default [
     color: 'gray',
     label: ['家属楼'],
     text: '燕山大学1983年规划中建设的校区，后续随着时间推移而扩建。',
+    buildingType: 'building',
   },
   {
     position: [13669, 6275],
     title: '风雨球场（网球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [13448, 6521],
     title: '风雨球场（羽毛球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [13089, 6783],
     title: '风雨球场（篮球）',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [13105, 7016],
@@ -650,12 +745,14 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />1号门是燕山大学的正门，该校门是燕山大学的标志性建筑之一。',
+    buildingType: 'gate',
   },
   {
     position: [12132, 7186],
     title: '第一体育场',
     color: 'blue',
     label: ['体育场馆'],
+    buildingType: 'gym',
   },
   {
     position: [11204, 7916],
@@ -663,24 +760,28 @@ export default [
     color: 'gate',
     label: ['校门'],
     text: '燕山大学校门由东校区正门开始，以两个校区的轮廓逆时针编号。<br />8号门为角门，一般不启用。',
+    buildingType: 'gate',
   },
   {
     position: [11147, 7407],
     title: '东校区大学生活动中心',
     color: 'blue',
     label: ['活动中心'],
+    buildingType: 'building',
   },
   {
     position: [11349, 7265],
     title: '燕山大学校团委',
     color: 'redDark',
     label: ['团委'],
+    buildingType: 'building',
   },
   {
     position: [10381, 7061],
     title: '高钢中心',
     color: 'blue',
     label: ['实验室'],
+    buildingType: 'lab',
   },
   {
     position: [10624, 7216],
@@ -688,6 +789,7 @@ export default [
     color: 'red',
     label: ['服务设施'],
     text: '原燕山大学第一食堂，现在改造为了生活服务楼。<br />提供超市、药店、理发、二手书、图文复印、电动车维修等服务。<br />这里有肯德基，还需要别的消息吗？',
+    buildingType: 'live',
   },
   {
     position: [10100, 6860],
@@ -695,6 +797,7 @@ export default [
     color: 'orange',
     label: ['餐厅'],
     text: '东校区的一所餐厅。',
+    buildingType: 'canteen',
   },
   {
     position: [9784, 6756],
@@ -702,6 +805,7 @@ export default [
     color: 'red',
     label: ['服务设施'],
     text: '以前宿舍没有独立的热水供应，学生们便在这里集中打水<br />此地现在也能用，而且还不用付水卡钱。',
+    buildingType: 'live',
   },
   {
     position: [9924, 6513],
@@ -709,6 +813,7 @@ export default [
     color: 'orange',
     label: ['餐厅'],
     text: '东校区的一所餐厅。<br />2024年末彻底装修过一次，但仅限装修。',
+    buildingType: 'canteen',
   },
   {
     position: [10228, 6420],
@@ -716,6 +821,7 @@ export default [
     color: 'orange',
     label: ['餐厅'],
     text: '东校区的餐厅。<br />民族餐厅提供清真食品，职工餐厅使用自助形式给供餐，学生一般时段内也可以来就餐。<br />这两所餐厅均为自营，在学生之间评价不错。',
+    buildingType: 'canteen',
   },
   {
     position: [9971, 5739],
@@ -723,6 +829,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '东校区的公寓是一座围合出内院空间的小楼。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [9681, 6045],
@@ -730,6 +837,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '东校区的公寓是一座围合出内院空间的小楼。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [9456, 6281],
@@ -737,6 +845,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '东校区的公寓是一座围合出内院空间的小楼。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [9248, 6587],
@@ -744,6 +853,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '四舍是东区最后一批被修整的宿舍，虽然面积不大，但修整前后简直天壤之别。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [9508, 6880],
@@ -751,6 +861,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '东校区的公寓是一座围合出内院空间的小楼。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [9897, 7131],
@@ -758,6 +869,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '东校区的公寓是一座围合出内院空间的小楼。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [10296, 7405],
@@ -765,6 +877,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '一舍是东区最后一批被修整的宿舍，虽然面积不大，但修整前后简直天壤之别。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [10726, 7662],
@@ -772,6 +885,7 @@ export default [
     color: 'gray',
     label: ['学生宿舍'],
     text: '六舍分为A，B两区，A区是后续改造成的公寓，拥有全校最大的宿舍面积。<br />东校区的公寓楼早期按照位置排序，随后再按照建成时间排序。不信的话，可以按顺序看看。',
+    buildingType: 'dorm',
   },
   {
     position: [9046, 6480],
@@ -779,6 +893,7 @@ export default [
     color: 'red',
     label: ['快递代收点'],
     text: '您可以在这里收取快递。<br />旁边有一排小平房，一些学生组织和社团的办公室在这里。<br />中国邮政的快递请前往东校区生活服务楼收取。',
+    buildingType: 'live',
   },
   {
     position: [10726, 6929],
@@ -786,6 +901,7 @@ export default [
     color: 'blueDark',
     label: ['地标'],
     text: '服务楼开设前东校区唯一的小卖部，因在燕鸣湖桥桥头故得此名。<br />2024年，因竞争力减弱而被关闭，为纪念这个“英雄一般的地方”，故在此设点。',
+    buildingType: 'landmark',
   },
   {
     position: [12045, 5820],
@@ -793,5 +909,6 @@ export default [
     color: 'blueDark',
     label: ['地标'],
     text: '机械馆和第二教学楼之间的花园，2021年5月整修并命名。<br />园中有一座校友们捐赠的雕像作品，展现了燕山大学的成就。',
+    buildingType: 'landmark',
   },
 ];
