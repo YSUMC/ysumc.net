@@ -59,7 +59,7 @@ def generate_tiles(image_path, output_dir, tile_size, max_zoom):
 if __name__ == "__main__":
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     image_path = "full.png"  # 输入图片路径
-    output_dir = "../docs/.vuepress/public/map/tiles/"           # 瓦片保存目录
+    output_dir = "../docs/.vuepress/public/map/tiles/256/"           # 瓦片保存目录
     tile_size = (256, 256)         # 瓦片大小 (宽, 高)
     max_zoom = 4                   # 最大缩放等级
 

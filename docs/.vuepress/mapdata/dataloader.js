@@ -39,6 +39,9 @@ export const markerLayer = L.layerGroup(
   points.map(p => {
     const marker = L.marker([-p.position[1] / 16, p.position[0] / 16], {
       icon: pointIcons[p.color] || pointIcons.blue,
+      title: p.title,
+      autoPanOnFocus: true,
+      riseOnHover: true,
     });
     // marker.bindPopup(p.title);
     marker.rawPoint = p;
@@ -58,13 +61,13 @@ const imageBounds = [
   [-540, 0],
   [0, 960],
 ];
-const tileLayerUrl = '/map/tiles/zoom_{z}/tile_{x}_{y}.webp';
+const tileLayerUrl = '/map/tiles/512/zoom_{z}/tile_{x}_{y}.webp';
 export const mapLayer = L.tileLayer(tileLayerUrl, {
   bounds: imageBounds,
   minZoom: 0,
   maxZoom: 5,
   noWrap: true,
-  tileSize: 256,
+  tileSize: 512,
   maxNativeZoom: 4,
   detectRetina: true,
 })
