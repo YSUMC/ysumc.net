@@ -57,16 +57,8 @@ onMounted(async () => {
 });
 
 function togglePoints() {
-  // TODO: 切换次数增多后的性能问题
-
   eggCount.value++;
-  if (showPoints.value) {
-    map.removeLayer(markerLayer);
-    showPoints.value = false;
-  } else {
-    map.addLayer(markerLayer);
-    showPoints.value = true;
-  }
+  showPoints.value = !showPoints.value;
 
   if (eggCount.value > 10) return;
   // 控制彩蛋 Marker 的显示
@@ -88,7 +80,7 @@ function togglePoints() {
     <div ref="mapContainer" class="h-full"></div>
     <Teleport v-for="i in markerList" :to="i.HTML" :key="i.rawPoint">
       <MapIcon :color="i.color" :icon-path="i.icon" :is-special="i.isSpecial"
-        :is-selected="i.rawPoint.uuid === selectedPoint" />
+        :is-selected="i.rawPoint.uuid === selectedPoint" v-show="showPoints"/>
     </Teleport>
   </div>
 </template>
