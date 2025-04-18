@@ -11,6 +11,7 @@ onMounted(() => {
 const showBar = ref(true);
 const barIsTitle = ref(true);
 
+const pointUuid = ref(Symbol());
 const barTitle = ref('');
 const barTags = ref([]);
 const barText = ref('');
@@ -49,10 +50,11 @@ function onZoom(zoom) {
 function onPointclick(point) {
   barIsTitle.value = false;
   const showBarOld = showBar.value;
-  if (showBarOld && point.title === barTitle.value) return;
+  if (showBarOld && pointUuid.value === point.uuid) return;
   showBar.value = false;
   setTimeout(
     () => {
+      pointUuid.value = point.uuid;
       barTitle.value = point.title || '';
       barTags.value = point.label || [];
       barText.value = point.text || '';
