@@ -46,7 +46,7 @@ onMounted(async () => {
     });
   });
 
-  mapData.mapLayer.on('click', e => {
+  map.on('click', e => {
     selectedPoint.value = '';
     emit('mapclick', e.latlng);
   });
