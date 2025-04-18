@@ -21,6 +21,12 @@ export default defineUserConfig({
           'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
       },
     ],
+    [
+      'script',
+      {
+        src: 'https://hm.baidu.com/hm.js?fa3da49c5f4c868bc9a8ae469ba4051f'
+      }
+    ]
   ],
   alias: {
     '@': path.resolve(__dirname, './'),
