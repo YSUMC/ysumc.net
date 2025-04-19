@@ -519,10 +519,10 @@ export default [
   },
   {
     position: [11913, 4064],
-    title: '文法学院（公共管理学院）（人文馆）',
+    title: '人文馆',
     color: 'blueDark',
     label: ['行政建筑'],
-    text: '文法学院的办公楼和工作室。',
+    text: '文法学院（公共管理学院）和外语学院的办公楼和工作室。',
     buildingType: 'building',
   },
   {
