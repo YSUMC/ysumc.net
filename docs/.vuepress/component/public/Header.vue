@@ -111,7 +111,7 @@ function keyHandler(e: any) {
             fit="contain"
             alt="YSUMC Logo"/>
         <!-- <span
-            class="text-base pl-3 font-ysumc hidden md:inline transition-all duration-300 ease-in-out"
+            class="text-base/relaxed pl-3 font-ysumc hidden md:inline transition-all duration-300 ease-in-out"
             :class="['text-white', 'text-black', 'text-white'][resColor]"
         >燕山大学Minecraft学生同好者协会</span> -->
       </AutoLink>

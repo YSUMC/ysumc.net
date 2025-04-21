@@ -26,7 +26,7 @@ const card = [
   <div class="not-prose w-full py-14">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-ysumc">加入我们！</h2>
-      <p class="text-base md:text-xl mt-3">我们不收取任何费用！</p>
+      <p class="text-base/relaxed md:text-xl mt-3">我们不收取任何费用！</p>
       <div class="md:flex md:gap-8 mt-8 mx-6 xl:mx-0">
         <div
             v-for="i in card"
@@ -40,7 +40,7 @@ const card = [
           <h3 class="mt-10 text-3xl md:text-4xl font-ysumc">
             {{ i.name }}
           </h3>
-          <p class="my-4 text-base md:text-lg" v-html="i.text"></p>
+          <p class="my-4 text-base/relaxed md:text-lg" v-html="i.text"></p>
           <Button
               text="了解更多"
               :link="i.link"

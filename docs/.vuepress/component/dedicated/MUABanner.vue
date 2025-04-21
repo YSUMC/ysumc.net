@@ -38,7 +38,7 @@ const link = [
               class="h-10 md:ml-auto md:mr-2 md:mt-0 mt-6"
           />
         </div>
-        <p class="text-base md:text-xl leading-normal font-normal md:mt-0 mt-6">
+        <p class="text-base/relaxed md:text-xl leading-normal font-normal md:mt-0 mt-6">
           我们并不孤独：不仅是我们，国内其他的著名高校也拥有着自己Minecraft同好群体甚至是Minecraft游戏社团。我们彼此联谊，精诚合作，联合高校Minecraft同好群体的力量，共同面对未来的挑战。
         </p>
       </div>

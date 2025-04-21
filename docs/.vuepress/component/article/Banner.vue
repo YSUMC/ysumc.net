@@ -80,12 +80,12 @@ function handleScroll() {
       />
       <div v-if="title || text" class="text-white">
         <h1 v-if="title" class="text-2xl md:text-5xl font-ysumc">{{ props.title }}</h1>
-        <p v-if="text" v-html="props.text" class="text-base md:text-xl mt-4"></p>
+        <p v-if="text" v-html="props.text" class="text-base/relaxed md:text-xl mt-4"></p>
         <div class="flex flex-wrap mt-6 gap-4">
           <span
               v-for="tag in props.tags"
               :key="tag"
-              class="inline-block bg-white text-black rounded px-4 py-2 font-semibold text-sm md:text-base"
+              class="inline-block bg-white text-black rounded px-4 py-2 font-semibold text-sm md:text-base/relaxed"
           >
             {{ tag }}
           </span>

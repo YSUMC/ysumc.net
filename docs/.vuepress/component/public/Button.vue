@@ -23,7 +23,7 @@ const colorList = {
   white: [
     'text-white',
     'border-white',
-    'hover:text-base-white',
+    'hover:text-base/relaxed white',
     'hover:border-base-white',
   ],
   black: [
@@ -43,7 +43,7 @@ const colorList = {
       :class="$attrs.class"
   >
     <button
-        class="transition-colors py-2 px-3 xl:px-4 rounded-md text-center text-base xl:text-lg border-[2.5px] font-bold tracking-tight whitespace-nowrap"
+        class="transition-colors py-2 px-3 xl:px-4 rounded-md text-center text-base/relaxed xl:text-lg border-[2.5px] font-bold tracking-tight whitespace-nowrap"
         :class="color ? colorList[color] : colorList.blue"
         :style="color === 'gray' ? 'cursor:default' : ''"
     >

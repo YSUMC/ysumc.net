@@ -43,7 +43,7 @@ main {
     }
 
     p {
-      @apply text-base md:text-lg;
+      @apply text-base/relaxed md:text-lg;
     }
   }
 

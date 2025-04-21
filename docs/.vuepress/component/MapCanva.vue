@@ -1,6 +1,6 @@
 <script setup>
 import 'leaflet/dist/leaflet.css';
-import { inject, onMounted, ref } from 'vue';
+import { inject, onBeforeUnmount, onMounted, ref } from 'vue';
 import iconDisablePoint from '@/asset/icons/point_disable.svg';
 import iconEnablePoint from '@/asset/icons/point_enable.svg';
 import MapIcon from './map/MapIcon.vue';
@@ -54,6 +54,10 @@ onMounted(async () => {
   map.on('zoomend', () => {
     emit('zoom', map.getZoom());
   });
+});
+
+onBeforeUnmount(() => {
+  map.remove()
 });
 
 function togglePoints() {
