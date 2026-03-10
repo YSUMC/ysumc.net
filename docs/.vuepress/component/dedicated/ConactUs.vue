@@ -18,7 +18,7 @@ const link = [
   },
   {
     name: 'skin',
-    link: 'http://skin.ysumc.club/',
+    link: 'http://skin.ysumc.net/',
     icon: 'mobi-mbri-website-theme ',
   },
 ]

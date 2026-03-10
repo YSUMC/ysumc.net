@@ -43,10 +43,10 @@ const NavBarList = [
     contents: [
       {
         name: '皮肤站设置',
-        link: 'https://blog.ysumc.club/index.php/%E6%95%99%E7%A8%8B/54.html',
+        link: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
       },
       {name: '我社报道', link: '/document'},
-      {name: 'MC社网盘', link: 'http://cloud.ysumc.club'},
+      {name: 'MC社网盘', link: 'http://cloud.ysumc.net'},
     ],
   },
   {
@@ -57,7 +57,7 @@ const NavBarList = [
   {
     name: '皮肤站',
     isMenu: false,
-    link: 'https://skin.ysumc.club',
+    link: 'https://skin.ysumc.net',
   },
   {
     name: '联系我们',

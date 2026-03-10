@@ -47,7 +47,7 @@ const props = defineProps<{
         </span>
       </div>
       <div
-        class="text-base/relaxed 
+        class="text-base/relaxed"
         :class="props.dark || props.color ? 'text-white' : 'text-black'"
       >
         <slot />
