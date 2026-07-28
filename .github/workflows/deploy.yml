@@ -1,0 +1,49 @@
+name: Deploy to COS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      - name: Install COSCLI
+        run: |
+          curl -fsSLo coscli https://cosbrowser.cloud.tencent.com/software/coscli/coscli-linux-amd64
+          echo "7165f2ae16c5f7ac495864c963ca574a76e04ec72680d7bc8a8eee3234d8cf91  coscli" | sha256sum --check
+          chmod +x coscli
+
+      - name: Deploy
+        env:
+          TENCENT_CLOUD_SECRET_ID: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
+          TENCENT_CLOUD_SECRET_KEY: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
+          TENCENT_CLOUD_BUCKET: ${{ vars.TENCENT_CLOUD_BUCKET }}
+          TENCENT_CLOUD_REGION: ${{ vars.TENCENT_CLOUD_REGION }}
+          TENCENT_CLOUD_ENDPOINT: ${{ vars.TENCENT_CLOUD_ENDPOINT }}
+        run: |
+          ./coscli config set --secret_id "$TENCENT_CLOUD_SECRET_ID" --secret_key "$TENCENT_CLOUD_SECRET_KEY"
+          ./coscli config add --bucket "$TENCENT_CLOUD_BUCKET" --region "$TENCENT_CLOUD_REGION" --endpoint "$TENCENT_CLOUD_ENDPOINT" --alias site
+          ./coscli sync docs/.vuepress/dist/ cos://site/ --recursive --delete --force --routines 64
