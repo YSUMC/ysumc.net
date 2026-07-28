@@ -19,6 +19,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          lfs: false
+
+      - name: Restore map tiles
+        id: map-tiles
+        uses: actions/cache@v5
+        with:
+          path: docs/.vuepress/public/map/tiles/512
+          key: map-tiles-${{ hashFiles('maptiler/full.png', 'maptiler/main.py', 'maptiler/requirements.txt') }}
+
+      - name: Download map source
+        if: steps.map-tiles.outputs.cache-hit != 'true'
+        run: git lfs pull --include="maptiler/full.png"
+
+      - uses: actions/setup-python@v6
+        if: steps.map-tiles.outputs.cache-hit != 'true'
+        with:
+          python-version: "3.13"
 
       - uses: pnpm/action-setup@v6
 
@@ -28,6 +46,16 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+
+      - name: Generate map tiles
+        if: steps.map-tiles.outputs.cache-hit != 'true'
+        run: |
+          python -m pip install -r maptiler/requirements.txt
+          pnpm maptiler
+
+      - name: Validate map tiles
+        run: test "$(find docs/.vuepress/public/map/tiles/512 -type f -name '*.webp' | wc -l)" -eq 2741
+
       - run: pnpm build
 
       - name: Install COSCLI
