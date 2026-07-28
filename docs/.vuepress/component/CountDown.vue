@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {inject, onMounted, onUnmounted, ref, watchEffect} from "vue";
+import {inject, onMounted, onUnmounted, ref} from "vue";
 
 const j = inject('jarallax')
 
@@ -10,10 +10,6 @@ const jarallaxitem = ref(null)
 
 const units = ['天', '时', '分', '秒']
 
-watchEffect(() => {
-  // 每隔一秒更新一次当前时间
-  timer = setInterval(updateTime, 1000)
-})
 // 清除定时器
 onUnmounted(() => {
   clearInterval(timer)
@@ -27,6 +23,7 @@ const props = defineProps<{
 
 onMounted(() => {
   updateTime()
+  timer = setInterval(updateTime, 1000)
   if (props.image) j.jarallax(jarallaxitem.value, {
     speed: 0.6,
     // imgPosition: '50% 50%',
