@@ -6,9 +6,15 @@ date: 2025-04-02
 import ImageText from '@/component/ImageText.vue'
 import TextCard from '@/component/TextCard.vue'
 import TwoColumn from '@/component/TwoColumn.vue'
+import ArticleNav from '@/component/article/ArticleNav.vue'
+
+import imgFestival from '~/image/article/SpringFestival.png'
 </script>
 
 # 部分 100 分钟建筑赛经验
+
+![文章题图](./image/article/SpringFestival.png)
+<ImageText align="center">100分钟建筑赛现场（活动介绍见<a href="/project/activity/100min-construct.html" class="text-blue-dark underline">这里</a>）</ImageText>
 
 ## 引言
 
@@ -286,3 +292,9 @@ import TwoColumn from '@/component/TwoColumn.vue'
 \*：纯像素画作品只有一个平面，制作取巧，且极容易抄袭，所以决定直接一刀切。
 
 </TextCard>
+
+<ArticleNav
+    :prev="{ title: '我从哪里来', link: '/where-i-from.html' }"
+    :next="{ title: 'Axiom 的基础科普与使用方法', link: '/project/axiom.html' }"
+    :list="{ title: '返回文章目录', link: '/document/reports.html' }"
+/>

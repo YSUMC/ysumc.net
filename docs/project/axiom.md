@@ -1,8 +1,13 @@
 
+<script setup>
+import ArticleNav from '@/component/article/ArticleNav.vue'
+import ImageText from '@/component/ImageText.vue'
+</script>
+
 > 感谢闽高联 AB 帮助我将这篇教程转移至 Github Repository.
 > 本教程作者 某个草 ，原文位置 https://hi-ysumc.feishu.cn/wiki/QDJBwtCBEi5eLakfWCvcRtErnvb?from=from_copylink ，请勿二次转载。
 >
-> 
+> **注：本教程自飞书 wiki 迁移而来，教程内截图暂未随迁移保存（原文链接中可查看全部配图）。截图位置以文字说明标注。**
 
 
 > [!warning]
@@ -44,19 +49,19 @@ Axiom 会在创造模式的物品栏中增加一个“功能”栏位，这代�
 
 
 
-<!-- <img src="static/NWxwbhOLXownLkx5pckcP0djn0e.png" style="zoom:50%;" /> -->
+> 📷 *[原教程此处有截图：创造模式物品栏中的“功能”栏位]*
 
 **游戏内功能选择**
 当玩家物品栏的选择光标在“功能”栏位上时，按住 `LAlt` 键，可以呼出 Axiom 的游戏内功能选择菜单，松开 `LAlt` 键菜单即关闭。
 
-<!-- <img src="static/DTACbBzWnoQmSsxOOPccHTRvn5f.png" style="zoom:50%;" /> -->
+> 📷 *[原教程此处有截图：按住 LAlt 呼出的功能选择菜单]*
 
 **游戏内编辑选项**
 当玩家物品栏的选择光标不在“功能”栏位上时，按住 `LAlt` 键，可以呼出 Axiom 的创造模式附加菜单，松开 `LAlt` 键菜单即关闭。
 
 
 
-<!-- <img src="static/UCW3beI0noFTgGxHFxrcTzz7nUe.png" style="zoom:50%;" /> -->
+> 📷 *[原教程此处有截图：Axiom 编辑器主界面]*
 
 如果你想了解更多，请参看本知识库的《游戏内编辑功能》。
 
@@ -72,7 +77,7 @@ Axiom 最具特色的功能就是嵌入在游戏中，类似于游戏引擎或�
 
 按下 `Rshift` 键，即可进入 Axiom 的编辑器功能。再次按下 `Rshift` 键退出该功能。
 
-<!-- <img src="static/Idafbu9w3oeK8rxkeXVcPXkAnfe.png" style="zoom: 33%;" /> -->
+> 📷 *[原教程此处有截图：编辑器工具面板设置]*
 
 ## 展示实体编辑功能
 
@@ -84,7 +89,7 @@ Axiom 最具特色的功能就是嵌入在游戏中，类似于游戏引擎或�
 
 如果你想了解更多，请参看《展示实体编辑功能》。
 
-<!-- <img src="static/YpU6bfBvsokL40xf53jcgJponTc.png" style="zoom: 67%;" /> -->
+> 📷 *[原教程此处有截图：参数与选项配置界面]*
 
 
 
@@ -198,4 +203,10 @@ Axiom 最独特的自然是基于 imGUI 的图形操作界面了，在此之前�
 
 # 还有一件事情：Axiom 的全部操作均可用 `Ctrl`+`Z` 撤销。
 
-多爽啊这！
+多爽啊！
+
+<ArticleNav
+    :prev="{ title: '100分钟建筑赛经验谈', link: '/experience-of-100-mins-building.html' }"
+    :next="{ title: '《像素燕大》项目记录', link: '/project/work/pixel-ysu.html' }"
+    :list="{ title: '返回文章目录', link: '/document/reports.html' }"
+/>

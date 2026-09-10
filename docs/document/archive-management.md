@@ -63,39 +63,28 @@ import heroImage from '~/image/document/Hero.png'
 
 </div>
 
-<TwoColumn>
-<template #left>
-
-### 一般记载封面
-
-一般档案使用的封面。**白色或浅灰色底，阳文。**
-
-</template>
-<template #right>
-
-### 重要记载封面
-
-社团内重要工作的记载封面。**深灰色底，阴文。**
-
-</template>
-</TwoColumn>
-
-<TwoColumn>
-<template #left>
-
-### 提案封面
-
-对外提交的提案封面。**燕大蓝底，阴文。**
-
-</template>
-<template #right>
-
-### 急件封面
-
-极其重大事务和急送件的封面。**深红色底，阴文。**
-
-</template>
-</TwoColumn>
+<div class="max-w-7xl mx-6 xl:mx-auto my-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+  <div class="not-prose shadow-lg p-10 text-center bg-white border border-gray">
+    <p class="text-3xl font-ysumc text-black">一般记载</p>
+    <p class="text-sm text-gray mt-4">白色或浅灰色底，阳文</p>
+    <p class="mt-8 text-base/relaxed">一般档案使用的封面。</p>
+  </div>
+  <div class="not-prose shadow-lg p-10 text-center bg-black-dark">
+    <p class="text-3xl font-ysumc text-white">重要记载</p>
+    <p class="text-sm text-gray mt-4">深灰色底，阴文</p>
+    <p class="mt-8 text-base/relaxed text-white">社团内重要工作的记载封面。</p>
+  </div>
+  <div class="not-prose shadow-lg p-10 text-center" style="background-color:#1f296a;">
+    <p class="text-3xl font-ysumc text-white">提案</p>
+    <p class="text-sm mt-4" style="color:#66cccc;">燕大蓝底，阴文</p>
+    <p class="mt-8 text-base/relaxed text-white">对外提交的提案封面。</p>
+  </div>
+  <div class="not-prose shadow-lg p-10 text-center" style="background-color:#9c292d;">
+    <p class="text-3xl font-ysumc text-white">急件</p>
+    <p class="text-sm mt-4" style="color:#d36839;">深红色底，阴文</p>
+    <p class="mt-8 text-base/relaxed text-white">极其重大事务和急送件的封面。</p>
+  </div>
+</div>
 
 <div class="center-block">
 

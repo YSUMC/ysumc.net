@@ -21,6 +21,7 @@ import eastCampus from '~/image/project/restore/2-1-1288x725.png'
 import westCampus from '~/image/project/restore/3-000-1-1288x584.png'
 import videoPoster from '~/image/project/restore/video1.jpg'
 import gf from '~/image/gf.png'
+import ArticleNav from '@/component/article/ArticleNav.vue'
 </script>
 
 <Hero :image="heroImage" dark="0.6" title="《像素燕大：燕山大学复原计划》" text="三千一百万方块打造的虚拟校园。2022.4 - 2022.12，历时303天。"></Hero>
@@ -110,6 +111,11 @@ import gf from '~/image/gf.png'
 《像素燕大：燕山大学复原计划》全导览图按2024年5月时的燕山大学复原。<br />
 支持缩放、点位查看，覆盖东西校区全部已复原建筑。
 </TextCard>
+
+<ArticleNav
+    :prev="{ title: 'Axiom 的基础科普与使用方法', link: '/project/axiom.html' }"
+    :list="{ title: '返回文章目录', link: '/document/reports.html' }"
+/>
 
 <JoinUs />
 
