@@ -9,28 +9,67 @@ import heroImage from '~/image/document/Hero.png'
 
 const documents = [
   {
+    title: '教程',
+    icon: 'mobi-mbri-edit',
+    text: '我们尽量完成了90%与MC有关的教程。',
+    link: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
+  },
+  {
     title: '皮肤站设置',
     icon: 'mobi-mbri-website-theme',
-    text: '多人服务器正版验证与皮肤加载的设置方法。',
+    text: '进入与燕山大学MC相关的服务器必须使用燕山大学MC社皮肤站账号进行登录，皮肤站与燕大统一身份认证接入，并对审核通过的外校人员以邀请码的方式注册。',
     link: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
+  },
+  {
+    title: 'JAVA版MC基础知识',
+    icon: 'mobi-mbri-bookmark',
+    text: '这里是与java版我的世界相关的绝大部分知识，包括且不限于游戏本体介绍；如何游玩MC；WE（创世神插件），服务器，数据包等技术学习资料。',
+    link: 'https://wiki.mualliance.ltd/%E7%87%95%E5%B1%B1%E5%A4%A7%E5%AD%A6Minecraft%E5%90%8C%E5%A5%BD%E8%80%85%E5%8D%8F%E4%BC%9A',
   },
   {
     title: '我社报道',
     icon: 'mobi-mbri-file',
-    text: '外界媒体对燕山大学Minecraft学生同好者协会的报道。',
+    text: '这里收录着外界网站发布与本社相关的资讯与本社的对外文章。',
     link: '/document/reports.html',
   },
   {
-    title: '视觉形象',
+    title: '视觉识别标准',
     icon: 'mobi-mbri-change-style',
-    text: '本社团视觉形象规范与素材下载。',
+    text: '视觉识别系统可以大规模提升社团对外的形象和专业性，也可以在一定程度上规范社员的行为，让他们在小事上一丝不苟。',
     link: '/document/visual-identity.html',
+  },
+  {
+    title: '档案管理办法',
+    icon: 'mobi-mbri-folder',
+    text: '燕山大学Minecraft学生同好者协会的每一个活动或地图成果都需要归档管理，本文介绍本社档案管理办法以供各位参考。',
+    link: '/document/archive-management.html',
+  },
+  {
+    title: 'MUA相关',
+    icon: 'mobi-mbri-globe-2',
+    text: '中国Minecraft高校联盟（Minecraft University Alliance，简称MUA）是一个旨在联合全国高校MC爱好者，共同推动高校MC生态发展的公益性组织。',
+    link: 'https://www.mualliance.ltd/',
   },
   {
     title: 'MC社网盘',
     icon: 'mobi-mbri-cloud',
     text: '社团对外公开的文件分发渠道。',
     link: 'http://cloud.ysumc.net',
+  },
+]
+
+const media = [
+  {
+    title: 'b站视频汇总',
+    icon: 'socicon-niconico',
+    text: '发布在b站所有与本社相关的视频都在本帖记录。',
+    link: 'https://space.bilibili.com/353195087',
+  },
+  {
+    title: 'b站：像素燕大宣传视频',
+    icon: 'socicon-niconico',
+    text: '《像素燕大：燕山大学复原计划》宣传视频。',
+    link: 'https://www.bilibili.com/video/BV1tD4y1p7uP/',
   },
 ]
 </script>
@@ -51,6 +90,24 @@ const documents = [
       class="not-prose bg-white shadow-lg p-10 text-center flex flex-col"
   >
     <span :class="i.icon" class="text-7xl text-gray4"></span>
+    <h3 class="mt-8 text-2xl font-ysumc">{{ i.title }}</h3>
+    <p class="mt-4 text-base/relaxed md:text-lg">{{ i.text }}</p>
+  </div>
+</div>
+
+<div class="center-block">
+
+## 资讯发布
+
+</div>
+
+<div class="max-w-7xl mx-6 xl:mx-auto my-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div
+      v-for="i in media"
+      :key="i.title"
+      class="not-prose bg-white shadow-lg p-10 text-center flex flex-col"
+  >
+    <span :class="i.icon" class="text-6xl text-gray4"></span>
     <h3 class="mt-8 text-2xl font-ysumc">{{ i.title }}</h3>
     <p class="mt-4 text-base/relaxed md:text-lg">{{ i.text }}</p>
   </div>

@@ -14,6 +14,7 @@ const content = [
       },
       { name: '我社报道', link: '/document/reports.html' },
       { name: '视觉形象', link: '/document/visual-identity.html' },
+      { name: '档案管理办法', link: '/document/archive-management.html' },
     ],
   },
   // {

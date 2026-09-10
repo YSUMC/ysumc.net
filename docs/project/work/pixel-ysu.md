@@ -13,8 +13,13 @@ import Hero from '@/component/Hero.vue'
 import TextCard from '@/component/TextCard.vue'
 import TwoColumn from '@/component/TwoColumn.vue'
 import CenterText from '@/component/public/CenterText.vue'
+import Introduction from '@/component/join/Introduction.vue'
+import JoinUs from '@/component/dedicated/JoinUs.vue'
 
 import heroImage from '~/image/project/Work-1.png'
+import eastCampus from '~/image/project/restore/2-1-1288x725.png'
+import westCampus from '~/image/project/restore/3-000-1-1288x584.png'
+import videoPoster from '~/image/project/restore/video1.jpg'
 import gf from '~/image/gf.png'
 </script>
 
@@ -22,43 +27,90 @@ import gf from '~/image/gf.png'
 
 <div class="container">
 
-<div class="center-block">
+<Introduction>
 
-## 项目简介
+《像素燕大：燕山大学复原计划》立项于2022年4月，结束于2022年12月4日，是燕山大学Minecraft学生同好者协会以游戏《我的世界》为载体对燕山大学东西校区进行的精确复原项目。是燕山大学MC社目前最大的Minecraft工程，也是目前燕山大学所拥有的最为直观生动的GIS工程。根据建筑施工次序，分为一期工程（东校区原始规划）和二期工程（其余部分）。
 
-该项目于2022年2月24日着手计划建设，于2022年12月4日正式竣工，历时303天。<br />
-由燕山大学Minecraft学生同好者协会打造，此项目以游戏《我的世界》为载体，通过CAD图纸、GIS定高、资料查询及图像拍摄等方法，进行燕山大学东、西校区的再现还原，将现实中的燕大转化为电子模型，打造最生动形象的燕山大学。
-
-</div>
+</Introduction>
 
 <TwoColumn>
 <template #left>
 
-## 我们如何做到
-
-- **CAD图纸**：依据学校基建处公开的图纸确定建筑轮廓
-- **GIS定高**：通过地理信息系统数据确定地形与建筑高度
-- **资料查询**：查阅校史资料确定建筑细节与色彩
-- **图像拍摄**：实地拍摄建筑立面作为还原参照
+<div class="not-prose bg-white shadow-lg p-6">
+  <img :src="eastCampus" class="w-full" alt="东校区" />
+  <p class="mt-4 text-center text-gray">东校区</p>
+</div>
 
 </template>
 <template #right>
 
-## 数据规模
-
-- 总方块数：**3100万+**
-- 覆盖范围：燕山大学东、西校区全境
-- 参与社员：建筑部全体成员
-- 竣工时间：2022年12月4日
+<div class="not-prose bg-white shadow-lg p-6">
+  <img :src="westCampus" class="w-full" alt="西校区" />
+  <p class="mt-4 text-center text-gray">西校区</p>
+</div>
 
 </template>
 </TwoColumn>
 
-<CenterText title="去看看">该项目成果已整合进《像素燕大》全导览图，可以在地图页自由游览。</CenterText>
+<div class="center-block">
+
+## 时间线
+
+</div>
+
+<div class="max-w-5xl mx-6 xl:mx-auto my-14">
+  <div class="not-prose bg-white shadow-lg p-8 mb-4 flex items-center gap-8">
+    <p class="text-2xl font-ysumc text-gray shrink-0 w-36">2022年4月</p>
+    <p class="text-base/relaxed md:text-lg">工程立项</p>
+  </div>
+  <div class="not-prose bg-white shadow-lg p-8 mb-4 flex items-center gap-8">
+    <p class="text-2xl font-ysumc text-gray shrink-0 w-36">2022年5月</p>
+    <p class="text-base/relaxed md:text-lg">东校区工程完成</p>
+  </div>
+  <div class="not-prose bg-white shadow-lg p-8 mb-4 flex items-center gap-8">
+    <p class="text-2xl font-ysumc text-gray shrink-0 w-36">2022年9月13日</p>
+    <p class="text-base/relaxed md:text-lg">燕山大学Minecraft学生同好者协会成立</p>
+  </div>
+  <div class="not-prose bg-white shadow-lg p-8 mb-4 flex items-center gap-8">
+    <p class="text-2xl font-ysumc text-gray shrink-0 w-36">2022年10月</p>
+    <p class="text-base/relaxed md:text-lg">二期工程立项</p>
+  </div>
+  <div class="not-prose bg-white shadow-lg p-8 flex items-center gap-8">
+    <p class="text-2xl font-ysumc text-gray shrink-0 w-36">2022年12月4日</p>
+    <p class="text-base/relaxed md:text-lg">完成</p>
+  </div>
+</div>
+
+<div class="center-block">
+
+## 起源
+
+</div>
+
+<div class="max-w-5xl mx-6 xl:mx-auto my-14 text-base/relaxed md:text-lg">
+
+《燕山大学复原计划》的提议是在特殊时期提出的，其一期工程原先是Minecraft中文论坛与NVIDIA合作举办的比赛《世界Ti不同：新学期RTX ON！光影缤纷新校园！》的参赛作品之一。**该作品荣获比赛二等奖**，在其巨大的影响下，二期工程即其余部分的复刻开始进行。二期工程于12月6日结束，也代表着燕山大学复原计划的完成。
+
+同学们和社员们对于西校区的呼声非常高，所以社团经讨论决定：完成燕山大学的剩余部分，并于2022年内彻底结束《燕山大学复原计划》的大规模工程。
+
+最后完成的建筑为“燕山大学图书馆（东区第二图书馆）”，向最初复原的建筑“燕山大学图书馆（原始规划）”致意。虽然从立项到完工跨度达到8个月，但实际建筑时间仅3个月，达到了社团内成员工作效率之最。
+
+来自本校学生的学校复原工程经常会成为其学校的Minecraft玩家们津津乐道的话题之一：《燕山大学复原计划》在一定程度上凝聚了燕山大学Minecraft同好群体，也间接促成了燕山大学Minecraft学生同好者协会的建立。可以说是燕山大学Minecraft学生同好者协会最具有里程碑意义的工程。
+
+</div>
+
+<div class="max-w-5xl mx-6 xl:mx-auto my-14">
+  <div class="not-prose bg-white shadow-lg p-6">
+    <img :src="videoPoster" class="w-full" alt="宣传视频" />
+    <p class="mt-4 text-center text-gray">《像素燕大》宣传视频</p>
+  </div>
+</div>
 
 <TextCard title="全导览图" :action-button="{text: '打开地图', link: '/map.html'}" :image="gf">
 《像素燕大：燕山大学复原计划》全导览图按2024年5月时的燕山大学复原。<br />
 支持缩放、点位查看，覆盖东西校区全部已复原建筑。
 </TextCard>
+
+<JoinUs />
 
 </div>
