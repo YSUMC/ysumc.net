@@ -11,13 +11,13 @@ const card = [
     name: '外部成员',
     icon: 'mobi-mbri-globe',
     text: '与朋友游玩，与大佬交流，享受燕山大学Minecraft学生同好者协会<br />为燕山大学《我的世界》玩家提供的服务器和丰富多彩的活动！',
-    link: '/join/external-member',
+    link: '/join/external-member.html',
   },
   {
     name: '正式社员',
     icon: 'mobi-mbri-users',
     text: '在享受游戏的同时获取全新的知识，提升自己的综合能力。<br />相信我们，你们将会在大学中度过最充实美好的社团时光！ ',
-    link: '/join/full-member',
+    link: '/join/full-member.html',
   },
 ]
 </script>

@@ -45,14 +45,16 @@ const NavBarList = [
         name: '皮肤站设置',
         link: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
       },
-      {name: '我社报道', link: '/document'},
+      {name: '我社报道', link: '/document/'},
+      {name: '视觉形象', link: '/document/visual-identity.html'},
+      {name: '加入我们', link: '/join/external-member.html'},
       {name: 'MC社网盘', link: 'http://cloud.ysumc.net'},
     ],
   },
   {
     name: '画廊',
     isMenu: false,
-    link: '/gallery',
+    link: '/gallery/',
   },
   {
     name: '皮肤站',

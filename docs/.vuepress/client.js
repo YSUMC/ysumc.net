@@ -2,6 +2,9 @@ import { defineClientConfig } from 'vuepress/client';
 import Layout from './layout/Layout.vue';
 import BlankPage from './layout/BlankPage.vue';
 import Blank from './layout/Blank.vue';
+import TagMap from './layout/TagMap.vue';
+import TagList from './layout/TagList.vue';
+import NotFound from './layout/NotFound.vue';
 
 import './style/index.scss';
 
@@ -11,6 +14,9 @@ export default defineClientConfig({
     Layout,
     BlankPage,
     Blank,
+    TagMap,
+    TagList,
+    NotFound,
   },
   async enhance({ app }) {
     if (!__VUEPRESS_SSR__) {

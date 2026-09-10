@@ -6,15 +6,14 @@ import AutoLink from './AutoLink.vue';
 const content = [
   {
     title: '资料',
-    link: '/document',
+    link: '/document/',
     items: [
       {
         name: '皮肤站教程',
         link: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
       },
-      { name: '游戏配置' },
-      { name: '我社报道' },
-      { name: '视觉形象', link: '/document/visual-identity' },
+      { name: '我社报道', link: '/document/reports.html' },
+      { name: '视觉形象', link: '/document/visual-identity.html' },
     ],
   },
   // {
@@ -45,6 +44,8 @@ const content = [
         name: '燕山大学MC社皮肤站',
         link: 'http://skin.ysumc.net/',
       },
+      { name: '画廊', link: '/gallery/' },
+      { name: '加入我们', link: '/join/external-member.html' },
     ],
   },
 ];
