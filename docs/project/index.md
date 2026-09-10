@@ -22,6 +22,17 @@ import workflowImg3 from '~/image/project/Workflow-3.png'
 import mcserverImg1 from '~/image/project/MCServer-1.png'
 import mcserverImg2 from '~/image/project/MCServer-2.png'
 
+// 社团生日（每年9月13日），倒计时指向下一个周年日
+function nextBirthday() {
+  const now = new Date()
+  let year = now.getFullYear()
+  const birthday = new Date(year, 8, 13)
+  if (birthday.getTime() <= now.getTime()) {
+    return new Date(year + 1, 8, 13)
+  }
+  return birthday
+}
+
 const project = [
   {
     title: '工程项目',
@@ -37,9 +48,9 @@ const project = [
         dark: true,
       },
       {
-        title: '一个大工程',
-        subtitle: '敬请期待。',
-        time: '预计于2024.1完成',
+        title: '《流浪地球2》太空电梯1:1复原',
+        subtitle: '固体方块数达12亿，从整体到每个细节均无可挑剔。',
+        time: '2023.4-2023.9',
         state: 1,
         image: wipImg,
         link: '/project/work-in-progress.html',
@@ -56,10 +67,10 @@ const project = [
       {
         title: '《定格之中》虚拟校史馆',
         subtitle: '走进照片，回首百年。',
-        time: '',
-        state: 2,
+        time: '2023.8',
+        state: 1,
         image: wipImg,
-        link: '',
+        link: '/project/work/dingge-zhong.html',
       },
     ],
   },
@@ -151,9 +162,9 @@ const project = [
 <Hero :image="heroImage" class="mb-14" dark="0.6">
   <div class="absolute top-1/3 w-full">
     <h1 class="text-4xl md:text-7xl font-ysumc text-white text-center">
-      距离下一次危机还有
+      距离社团生日还有
     </h1>
-    <CountDown :time="new Date('2024/12/10')">
+    <CountDown :time="nextBirthday()">
       这里是项目页，下滑以了解更多项目。
     </CountDown>
   </div>
@@ -179,10 +190,10 @@ const project = [
 </div>
 
 <CountDown
-    :time="new Date('2023/9/13')"
+    :time="nextBirthday()"
     title="有人要过生日了。"
     :image="activityImg2"
->燕山大学Minecraft学生同好者协会成立一周年。</CountDown>
+>燕山大学Minecraft学生同好者协会成立于2022年9月13日。每年这一天，我们都在一起。</CountDown>
 
 <JoinUs />
 

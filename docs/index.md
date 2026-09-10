@@ -139,8 +139,9 @@ Studio于2009年推出的沙盒类电子游戏。游戏中以“方块”为单�
 <MUABanner />
 
 <CountDown
-:time="new Date('2024/2/10')"
-title="距离下一次惊艳大家还剩下："
+:time="new Date(`${new Date().getFullYear() + (new Date().getMonth() > 8 || (new Date().getMonth() === 8 && new Date().getDate() >= 13) ? 1 : 0)}/9/13`)"
+title="距离社团生日还剩下："
 :image=CountDownImg>
-燕山大学MC社从来不缺惊喜。
+2022年9月13日，燕山大学Minecraft学生同好者协会成立。<br />
+每年这一天，我们都会带着新的惊喜回来。
 </CountDown>

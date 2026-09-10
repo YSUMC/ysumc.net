@@ -76,8 +76,11 @@ export default defineUserConfig({
       ],
       type: [
         // 类型
+        // path 默认会生成 /project/ 覆盖我们的项目列表页，
+        // 显式指定到 /type/project/ 避免路由冲突
         {
           key: 'project', // Only article with date should be added to timeline
+          path: '/type/project/',
           filter: page =>
             page.filePathRelative.startsWith('project/') &&
             !page.frontmatter.archive, // Sort pages with time
