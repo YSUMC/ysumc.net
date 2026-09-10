@@ -61,7 +61,7 @@ jobs:
       - name: Install COSCLI
         run: |
           curl -fsSLo coscli https://cosbrowser.cloud.tencent.com/software/coscli/coscli-linux-amd64
-          echo "7165f2ae16c5f7ac495864c963ca574a76e04ec72680d7bc8a8eee3234d8cf91  coscli" | sha256sum --check
+          echo "a07de5ba2800147a700ed29036b0c76a4229088cee68e1682d0eae19b638a915  coscli" | sha256sum --check
           chmod +x coscli
 
       - name: Deploy
