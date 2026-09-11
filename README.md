@@ -13,12 +13,17 @@
 ## 目录
 
 - `app/pages/`：首页、分类页、加入页、画廊和地图等专用 Vue 页面。
+- `app/pages/anniversary.vue`：一周年特别页（移植自旧 Nuxt 站），深色底 + MUA 视频横幅。
+- `app/error.vue`：品牌化 404；Nuxt 4 的 srcDir 是 `app/`，错误页放仓库根目录不会生效。
 - `content/project/`：生成 `/project/**/` 的项目正文。
 - `content/document/`：生成 `/document/**/` 的资料正文。
 - `content/articles/`：生成根路径文章。
 - `app/components/content/`：可在 Markdown/MDC 中使用的内容组件。
+- `app/components/content/Hero.vue`：整屏英雄图、文章横幅、正文视差块三种形态，页头透明态的判定也在其中。
+- `app/data/icons.ts` + `scripts/extract-icons.mjs`：旧站图标字体的按需 SVG 数据与生成脚本。
 - `app/data/map/`：地图坐标、点位、建筑类型和 SVG path 的类型化单一数据源。
 - `app/assets/image/`：交给 Nuxt Image 处理的展示图片。
+- `public/media/`：视频等大媒体（一周年页的 `myuniversity/{vp9.webm,265.mp4}`）。
 - `public/image/gallery/`：画廊公开下载原图。
 - `public/map/tiles/512/`：本地或 CI 生成的地图瓦片，不提交 Git。
 - `maptiler/`：Git LFS 原图、Pillow 切片脚本和依赖。
@@ -36,13 +41,14 @@ pnpm dev
 常用验证：
 
 ```bash
+pnpm format:check
 pnpm typecheck
 pnpm generate
 pnpm verify
 git diff --check
 ```
 
-`pnpm generate` 会在 Nuxt 生成结束后移除 Content 自动产生、但本站客户端不需要的公开数据库 dump。`pnpm verify` 随后检查预期路由、404、sitemap、robots、残留 `.html` 内链、关键 SEO 标记及客户端 SQLite/WASM/worker 痕迹。
+`pnpm format:check` 用仓库自带的 Prettier 配置检查代码风格（`pnpm format` 为写入），`content/` 是站点正文、不参与格式化。`pnpm generate` 会在 Nuxt 生成结束后移除 Content 自动产生、但本站客户端不需要的公开数据库 dump。`pnpm verify` 随后检查预期路由（含 `/anniversary`）、404、sitemap、robots、残留 `.html` 内链、关键 SEO 标记、被转义成正文的组件标签、客户端 SQLite/WASM/worker 痕迹、地图瓦片数量与报道顺序。
 
 ## 内容写作
 
@@ -57,7 +63,9 @@ report:
   displayDate: 2022-09-13
 ```
 
-Markdown 可直接使用 Nuxt Content 的 Markdown、MDC、HTML 属性和 `app/components/content/` 下的组件。只使用一次的特殊排版留在对应正文中。不要在页面组件中直接查询 Content；查询集中在 `server/utils/content-pages.ts`，页面通过 `useAsyncData` 获得预渲染 payload。
+页面排版由 `layout` 决定：`layout: article` 表示顶部 384px 横幅 + 正文窄栏（`articles` collection 默认如此），不写则视为正文自带 `<Hero>`。
+
+Markdown 可直接使用 Nuxt Content 的 Markdown、MDC、HTML 属性和 `app/components/content/` 下的组件。组件标签写成单行（跨行会被当成普通段落转义，页面会丢内容并显示标签字面量）；用 `::组件{…}` 块语法时记得以 `::` 收尾。只使用一次的特殊排版留在对应正文中。不要在页面组件中直接查询 Content；查询集中在 `server/utils/content-pages.ts`，页面通过 `usePrerenderData` 获得预渲染 payload。
 
 ## 图片与画廊
 
@@ -89,7 +97,9 @@ coscli sync .output/public/ cos://site/ --recursive --delete --force --routines 
 ## 已知边界
 
 - 站点不提供 `/join/` 根页面。
+- `/anniversary` 是从旧 Nuxt 站移植的一周年特别页；旧站里它本身就是首页，因此目前没有导航入口，要不要加入口需要单独决定。
 - 不兼容旧 `.html` 地址；旧地址允许返回 404。
 - 不提供站内搜索、标签页、动态筛选、深色模式或多语言。
 - Content 查询只在服务端生成阶段运行，客户端不携带内容数据库。
+- 一周年页的视频（约 11MB）与 poster（约 6.5MB）直接放在 `public/media/` 与 `app/assets/image/anniversary/`，未压缩、未走 Git LFS 或对象存储。
 - 自动检查不等同于 Chrome、Edge、移动 Safari 或 WebView 的视觉与交互验收。
