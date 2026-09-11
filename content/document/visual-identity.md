@@ -1,12 +1,7 @@
 ---
 title: "视觉识别标准"
 ---
-<Hero
-    image="/image/document/Hero.png"
-    dark="0.6"
-    title="视觉识别"
-    text="燕山大学Minecraft学生同好者协会视觉形象"
-></Hero>
+<Hero image="/image/document/Hero.png" dark="0.6" title="视觉识别" text="燕山大学Minecraft学生同好者协会视觉形象"></Hero>
 
 <div class="container">
 

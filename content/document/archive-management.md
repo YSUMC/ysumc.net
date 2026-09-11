@@ -1,12 +1,7 @@
 ---
 title: "档案管理办法"
 ---
-<Hero
-    image="/image/document/Hero.png"
-    dark="0.6"
-    title="档案管理办法"
-    text="留住每一份记忆才能越走越远"
-></Hero>
+<Hero image="/image/document/Hero.png" dark="0.6" title="档案管理办法" text="留住每一份记忆才能越走越远"></Hero>
 
 <div class="container">
 
@@ -26,22 +21,22 @@ title: "档案管理办法"
 
 <div class="max-w-7xl mx-6 xl:mx-auto my-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
   <div class="not-prose bg-white shadow-lg p-10 text-center">
-    <span class="mobi-mbri-contact-form text-7xl text-gray4"></span>
+    <Icon name="mobi-mbri-contact-form" class="size-18 text-gray4" />
     <h3 class="mt-8 text-xl font-ysumc">行政档案</h3>
     <p class="mt-4 text-base/relaxed">一般来自行政部，运营层和临时团支部，记载了社团内的行政工作资料，比如社团建社记载、运营记载、会议记载等。</p>
   </div>
   <div class="not-prose bg-white shadow-lg p-10 text-center">
-    <span class="mobi-mbri-gift text-7xl text-gray4"></span>
+    <Icon name="mobi-mbri-gift" class="size-18 text-gray4" />
     <h3 class="mt-8 text-xl font-ysumc">活动档案</h3>
     <p class="mt-4 text-base/relaxed">一般来自运维部和技术部，记载了社团内的全部活动记录，例如活动报告、会议思维导图、活动记载等。</p>
   </div>
   <div class="not-prose bg-white shadow-lg p-10 text-center">
-    <span class="mobi-mbri-rocket text-7xl text-gray4"></span>
+    <Icon name="mobi-mbri-rocket" class="size-18 text-gray4" />
     <h3 class="mt-8 text-xl font-ysumc">建筑（玩法）档案</h3>
     <p class="mt-4 text-base/relaxed">一般来自建筑部和玩法部，记载了社团内全部的Minecraft建筑地图，渲染文件和小游戏地图。</p>
   </div>
   <div class="not-prose bg-white shadow-lg p-10 text-center">
-    <span class="mobi-mbri-folder text-7xl text-gray4"></span>
+    <Icon name="mobi-mbri-folder" class="size-18 text-gray4" />
     <h3 class="mt-8 text-xl font-ysumc">其他档案</h3>
     <p class="mt-4 text-base/relaxed">社团内其他难以归档于上述三类的档案，便归类于“其他档案”中。</p>
   </div>
