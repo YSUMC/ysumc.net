@@ -1,5 +1,6 @@
 ---
 title: "Axiom 的基础科普与使用方法"
+layout: "article"
 category: "other"
 order: 1
 status: "completed"
@@ -211,4 +212,3 @@ Axiom 最独特的自然是基于 imGUI 的图形操作界面了，在此之前�
 # 还有一件事情：Axiom 的全部操作均可用 `Ctrl`+`Z` 撤销。
 
 多爽啊！
-
