@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       failOnError: true,
-      routes: ['/sitemap.xml'],
+      routes: ['/sitemap.xml', '/anniversary'],
     },
   },
   routeRules: {
@@ -31,12 +31,17 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'zh-Hans-CN' },
-      meta: [{
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
-      }],
+      meta: [
+        {
+          name: 'viewport',
+          content:
+            'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+        },
+      ],
       link: [{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-      script: [{ src: 'https://hm.baidu.com/hm.js?fa3da49c5f4c868bc9a8ae469ba4051f' }],
+      script: [
+        { src: 'https://hm.baidu.com/hm.js?fa3da49c5f4c868bc9a8ae469ba4051f' },
+      ],
     },
   },
   typescript: { typeCheck: true },
