@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const navState = reactive({ transparent: true, color: 'white' as 'white' | 'black' })
+// 默认透明：站点几乎所有页面首屏都是整屏英雄图，透明态由 Hero 组件的
+// 观察器在挂载时接管；`solid` 用于没有英雄图的页面（如 404）。
+const props = withDefaults(defineProps<{ solid?: boolean }>(), { solid: false })
+const navState = reactive({
+  transparent: !props.solid,
+  color: 'white' as 'white' | 'black',
+})
 
 function setNavBar(transparent?: boolean, color?: 'white' | 'black') {
   if (typeof transparent === 'boolean') navState.transparent = transparent
