@@ -1,4 +1,7 @@
 node_modules
+.nuxt
+.output
+.data
 dist
 yarn-error.log
 qshell*
@@ -11,4 +14,4 @@ cache
 # VuePress 默认构建生成的静态文件目录
 .DS_Store
 
-docs/.vuepress/public/map/tiles
+public/map/tiles

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /_ipx/
+Disallow: /_nuxt/
+Disallow: /*.json$

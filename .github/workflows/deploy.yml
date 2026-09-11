@@ -26,7 +26,7 @@ jobs:
         id: map-tiles
         uses: actions/cache@v5
         with:
-          path: docs/.vuepress/public/map/tiles/512
+          path: public/map/tiles/512
           key: map-tiles-${{ hashFiles('maptiler/full.png', 'maptiler/main.py', 'maptiler/requirements.txt') }}
 
       - name: Download map source
@@ -54,9 +54,11 @@ jobs:
           pnpm maptiler
 
       - name: Validate map tiles
-        run: test "$(find docs/.vuepress/public/map/tiles/512 -type f -name '*.webp' | wc -l)" -eq 2741
+        run: test "$(find public/map/tiles/512 -type f -name '*.webp' | wc -l)" -eq 2741
 
-      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm generate
+      - run: pnpm verify
 
       - name: Install COSCLI
         run: |
@@ -74,4 +76,4 @@ jobs:
         run: |
           ./coscli config set --secret_id "$TENCENT_CLOUD_SECRET_ID" --secret_key "$TENCENT_CLOUD_SECRET_KEY"
           ./coscli config add --bucket "$TENCENT_CLOUD_BUCKET" --region "$TENCENT_CLOUD_REGION" --endpoint "$TENCENT_CLOUD_ENDPOINT" --alias site
-          ./coscli sync docs/.vuepress/dist/ cos://site/ --recursive --delete --force --routines 64
+          ./coscli sync .output/public/ cos://site/ --recursive --delete --force --routines 64

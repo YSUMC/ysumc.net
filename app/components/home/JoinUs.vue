@@ -1,0 +1,3 @@
+<template>
+  <section class="page-container py-14 text-center"><h2 class="font-ysumc text-3xl md:text-4xl">加入我们！</h2><p class="mt-3">我们不收取任何费用！</p><div class="mt-8 grid gap-8 md:grid-cols-2"><NuxtLink v-for="item in [{name:'外部成员',text:'与朋友游玩，与大佬交流，享受燕山大学Minecraft学生同好者协会<br />为燕山大学《我的世界》玩家提供的服务器和丰富多彩的活动！',to:'/join/external-member/'},{name:'正式社员',text:'在享受游戏的同时获取全新的知识，提升自己的综合能力。<br />相信我们，你们将会在大学中度过最充实美好的社团时光！ ',to:'/join/full-member/'}]" :key="item.name" :to="item.to" class="bg-white p-10 shadow-lg"><h3 class="font-ysumc text-3xl">{{ item.name }}</h3><p class="my-5" v-html="item.text"/><span class="border-2 border-brand px-5 py-2 text-brand-dark">了解更多</span></NuxtLink></div></section>
+</template>

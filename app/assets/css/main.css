@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: "YSUMC";
+  src: url("../fonts/YSUMC_Standard_Minecraft_Font.woff2") format("woff2"),
+    url("../fonts/YSUMC_Standard_Minecraft_Font.woff") format("woff");
+  font-display: swap;
+}
+
+@theme {
+  --font-ysumc: "YSUMC", sans-serif;
+  --color-base-white: #f1f1f1;
+  --color-ink: #3b3b3b;
+  --color-ink-dark: #212121;
+  --color-gray: #777777;
+  --color-gray-dark: #5e5e5e;
+  --color-brand: #66cccc;
+  --color-brand-dark: #59b3b3;
+  --color-ysu-blue: #1f296a;
+  --color-pink: #cc6666;
+  --color-red: #9c292d;
+  --color-orange: #d36839;
+}
+
+:root { color: var(--color-ink); background: var(--color-base-white); }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-base-white); color: var(--color-ink); }
+a { transition: color 160ms ease; }
+.font-ysumc { font-family: var(--font-ysumc); }
+.page-container { width: min(92%, 80rem); margin-inline: auto; }
+.content-prose { width: min(88%, 72rem); margin: 3rem auto; }
+.content-prose h1 { display: none; }
+.content-prose h2 { font-family: var(--font-ysumc); font-size: clamp(1.8rem, 4vw, 2.4rem); }

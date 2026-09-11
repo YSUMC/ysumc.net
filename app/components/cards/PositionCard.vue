@@ -1,0 +1,2 @@
+<script setup lang="ts">defineProps<{items:{title:string,text:string,color?:string}[]}>()</script>
+<template><div class="page-container grid gap-6 md:grid-cols-2"><article v-for="item in items" :key="item.title" class="bg-white p-8 shadow-lg"><div class="grid size-12 place-items-center rounded-full border-2 border-current">◆</div><h3 class="mt-5 font-ysumc text-2xl" :class="item.color">{{item.title}}</h3><p class="mt-4 leading-relaxed" v-html="item.text"/></article></div></template>
