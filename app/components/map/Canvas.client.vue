@@ -21,9 +21,12 @@ let map: import('leaflet').Map | undefined
 let markerLayer: import('leaflet').LayerGroup | undefined
 let eggLayer: import('leaflet').LayerGroup | undefined
 
+const pinPath =
+  'M52.4,0C23.5,0,0,24.1,0,53.8s28,66,49.5,89.8c1.5,1.7,4.1,1.7,5.6,0,21.5-23.7,49.5-61.4,49.5-89.8S81.2,0,52.3,0h.1Z'
+
 function markerHtml(point: MapPoint) {
   const type = buildingTypes[point.buildingType]
-  return `<span class="map-marker" style="--marker:${type.color}"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="${type.icon}"/></svg></span>`
+  return `<svg viewBox="0 0 104.6 144.9" aria-hidden="true"><path fill="${type.color}" d="${pinPath}"/><path fill="#fff" d="${type.icon}"/></svg>`
 }
 
 onMounted(async () => {
@@ -56,8 +59,8 @@ onMounted(async () => {
           icon: L.divIcon({
             className: 'map-icon',
             html: markerHtml(point),
-            iconSize: [30, 42],
-            iconAnchor: [15, 41],
+            iconSize: [29.71, 41.14],
+            iconAnchor: [14.86, 41],
           }),
           title: point.title,
           autoPanOnFocus: true,
@@ -114,22 +117,11 @@ function togglePoints() {
   background: none !important;
   border: 0 !important;
 }
-.map-marker {
-  display: grid;
-  width: 30px;
-  height: 42px;
-  place-items: center;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  background: var(--marker);
-  color: white;
-  box-shadow: 0 2px 6px #0005;
-}
-.map-marker svg {
-  width: 23px;
-  height: 23px;
-  transform: rotate(45deg);
-  fill: currentColor;
+.map-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.75));
 }
 .map-heart {
   font-size: 42px;
