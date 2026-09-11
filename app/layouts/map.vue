@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const navState = reactive({ transparent: false, color: 'white' as 'white' | 'black' })
+const navState = reactive({
+  transparent: false,
+  color: 'white' as 'white' | 'black',
+})
 
 function setNavBar(transparent?: boolean, color?: 'white' | 'black') {
   if (typeof transparent === 'boolean') navState.transparent = transparent

@@ -53,6 +53,13 @@ export const buildingTypes = {
   },
 } satisfies Record<BuildingTypeKey, BuildingType>
 
-export const mapBounds: [[number, number], [number, number]] = [[-540, 0], [0, 960]]
-export const eggPositions: [number, number][] = [[12045, 5820], [6490, 4442], [1655, 3721]]
+export const mapBounds: [[number, number], [number, number]] = [
+  [-540, 0],
+  [0, 960],
+]
+export const eggPositions: [number, number][] = [
+  [12045, 5820],
+  [6490, 4442],
+  [1655, 3721],
+]
 export const tileLayerUrl = '/map/tiles/512/zoom_{z}/tile_{x}_{y}.webp'

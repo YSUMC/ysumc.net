@@ -1,4 +1,14 @@
-export type BuildingTypeKey = 'dorm' | 'lab' | 'gym' | 'live' | 'landmark' | 'building' | 'park' | 'canteen' | 'library' | 'gate'
+export type BuildingTypeKey =
+  | 'dorm'
+  | 'lab'
+  | 'gym'
+  | 'live'
+  | 'landmark'
+  | 'building'
+  | 'park'
+  | 'canteen'
+  | 'library'
+  | 'gate'
 
 export type MapPoint = {
   position: [number, number]
@@ -9,4 +19,4 @@ export type MapPoint = {
   buildingType: BuildingTypeKey
 }
 
-export type BuildingType = { color: string, isSpecial: boolean, icon: string }
+export type BuildingType = { color: string; isSpecial: boolean; icon: string }

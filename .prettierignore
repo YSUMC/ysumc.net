@@ -1,0 +1,17 @@
+# 与旧仓库（ysumc.club）保持同一套配置：semi: false + singleQuote。
+# 生成物与内容正文不参与格式化：
+
+node_modules
+.nuxt
+.output
+dist
+.data
+
+# content/ 是站点正文（约定：有效旧站正文不得改写），
+# Prettier 会重排列表符号/空行，产生与内容无关的大量 diff，因此排除。
+content
+
+public/map
+public/media
+maptiler/full.png
+pnpm-lock.yaml

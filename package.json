@@ -9,6 +9,8 @@
     "generate": "nuxt generate && node scripts/clean-content-runtime.mjs",
     "typecheck": "nuxt typecheck",
     "verify": "node scripts/verify-output.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "maptiler": "python maptiler/main.py"
   },
   "dependencies": {
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.20",
+    "prettier": "^3.9.6",
     "typescript": "^5.9.2",
     "vue-tsc": "^3.0.6"
   },
