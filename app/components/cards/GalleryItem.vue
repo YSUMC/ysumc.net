@@ -1,4 +1,46 @@
 <script setup lang="ts">
-defineProps<{ title:string,time:string,image:string,text:string,download?:string,downloads?:{label:string,to?:string}[] }>()
+defineProps<{
+  title: string
+  time: string
+  image: string
+  text: string
+  download?: string
+  downloads?: { label: string; to?: string }[]
+}>()
 </script>
-<template><article class="page-container my-14 overflow-hidden bg-white shadow-lg md:grid md:grid-cols-2"><NuxtImg :src="image" sizes="sm:100vw md:60vw" class="h-full w-full object-cover" :alt="title"/><div class="p-8 md:p-12"><p class="text-sm text-gray">{{time}}</p><h2 class="mt-3 font-ysumc text-3xl">{{title}}</h2><div class="mt-5 leading-relaxed" v-html="text"/><div class="mt-7 flex flex-wrap gap-3"><template v-if="downloads"><a v-for="item in downloads" :key="item.label" :href="item.to" :download="!!item.to" class="border-2 px-5 py-2" :class="item.to?'border-pink text-pink':'border-gray text-gray'">{{item.label}}</a></template><a v-else-if="download" :href="download" download class="border-2 border-pink px-5 py-2 text-pink">下载原图</a></div></div></article></template>
+
+<template>
+  <div class="not-prose w-full bg-white py-16">
+    <div class="items-center lg:mx-10 lg:flex lg:justify-start">
+      <NuxtImg
+        :src="image"
+        sizes="sm:100vw md:66vw"
+        class="aspect-video w-full object-cover shadow-lg lg:w-2/3"
+        :alt="title"
+      />
+      <div class="w-0 xl:w-[5%]" />
+      <div class="ml-8 mt-8 lg:mt-0 xl:ml-0">
+        <p class="font-ysumc text-3xl xl:text-4xl">{{ time }}</p>
+        <h2 class="-ml-2 pt-4 font-ysumc text-2xl xl:text-3xl">{{ title }}</h2>
+        <div class="mb-6 mt-12 text-base xl:text-lg" v-html="text" />
+        <div class="flex flex-wrap gap-4">
+          <template v-if="downloads">
+            <SiteButton
+              v-for="(item, index) in downloads"
+              :key="item.label"
+              :text="item.label"
+              :color="index === 0 ? 'gray' : 'pink'"
+              :to="item.to"
+            />
+          </template>
+          <SiteButton
+            v-else-if="download"
+            text="下载原图"
+            :to="download"
+            download
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

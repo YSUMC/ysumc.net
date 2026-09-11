@@ -19,17 +19,17 @@ subtitle: "薪火相传的意义。"
 
 <div class="max-w-7xl mx-6 xl:mx-auto my-14 grid grid-cols-1 md:grid-cols-3 gap-8">
   <div class="not-prose bg-white shadow-lg p-10">
-    <span class="mobi-mbri-user-2 text-7xl text-gray4 block text-center"></span>
+    <Icon name="mobi-mbri-user-2" class="mx-auto block size-18 text-gray4" />
     <h3 class="mt-8 text-2xl font-ysumc text-center">个人魅力和执行力培养</h3>
     <p class="mt-4 text-base/relaxed md:text-lg">听起来可能和社团本身工作离题太远，但实际上，个人魅力与执行力极其重要。这包括如何领导社团，如何从一而终地贯彻执行社团的主要目标等直接关系着社团根基的事务。</p>
   </div>
   <div class="not-prose bg-white shadow-lg p-10">
-    <span class="mobi-mbri-star text-7xl text-gray4 block text-center"></span>
+    <Icon name="mobi-mbri-star" class="mx-auto block size-18 text-gray4" />
     <h3 class="mt-8 text-2xl font-ysumc text-center">审美培养</h3>
     <p class="mt-4 text-base/relaxed md:text-lg">审美能力是本社团外宣和内部工作的重要保证，相当于社团的“面子”。将利好于游戏内建筑工作，3D视效工作流和外部宣传，优秀的审美能力可以大幅提升社团的形象。</p>
   </div>
   <div class="not-prose bg-white shadow-lg p-10">
-    <span class="mobi-mbri-setting text-7xl text-gray4 block text-center"></span>
+    <Icon name="mobi-mbri-setting" class="mx-auto block size-18 text-gray4" />
     <h3 class="mt-8 text-2xl font-ysumc text-center">技术培养</h3>
     <p class="mt-4 text-base/relaxed md:text-lg">Minecraft的底层技术是社团运营的基础，是社团的“里子”。涉及到软件和硬件的工作。例如服务器的搭建和维护，本官网的制作也涉及到网络技术上的方面。</p>
   </div>

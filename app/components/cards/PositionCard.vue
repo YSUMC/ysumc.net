@@ -1,2 +1,25 @@
-<script setup lang="ts">defineProps<{items:{title:string,text:string,color?:string}[]}>()</script>
-<template><div class="page-container grid gap-6 md:grid-cols-2"><article v-for="item in items" :key="item.title" class="bg-white p-8 shadow-lg"><div class="grid size-12 place-items-center rounded-full border-2 border-current">◆</div><h3 class="mt-5 font-ysumc text-2xl" :class="item.color">{{item.title}}</h3><p class="mt-4 leading-relaxed" v-html="item.text"/></article></div></template>
+<script setup lang="ts">
+defineProps<{
+  items: { title: string; text: string; icon: string; color?: string }[]
+}>()
+</script>
+
+<template>
+  <div class="not-prose flex w-full flex-wrap justify-center gap-6 py-2">
+    <div
+      v-for="item in items"
+      :key="item.title"
+      class="w-full md:w-1/3 lg:w-1/5"
+    >
+      <Icon
+        :name="item.icon"
+        class="mx-auto block size-18"
+        :class="item.color || 'text-gray'"
+      />
+      <h4 class="pb-3 pt-8 text-center text-xl">
+        <b>{{ item.title }}</b>
+      </h4>
+      <p class="text-lg" v-html="item.text" />
+    </div>
+  </div>
+</template>

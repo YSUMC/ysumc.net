@@ -1,1 +1,5 @@
-<template><div class="not-prose page-container py-12 text-lg/relaxed md:text-xl/relaxed"><slot /></div></template>
+<template>
+  <div class="not-prose mx-auto my-14 max-w-5xl indent-10 text-xl">
+    <slot />
+  </div>
+</template>
