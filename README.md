@@ -84,6 +84,21 @@ find public/map/tiles/512 -type f -name '*.webp' | wc -l
 
 期望数量是 `2741`。CI 缓存键同时包含原图、脚本和 Pillow 依赖。
 
+### OpenLayers 缩放边界备忘
+
+OpenLayers 10.10.0 在同时设置 `maxResolution: 2`、`minResolution: 0.0625` 和
+`zoomFactor: Math.SQRT2` 时会少计算一级最大缩放。其内部通过对数反推层级并直接
+`Math.floor()`；本组参数在 JavaScript 中得到 `9.999999999999998`，因此预期的 10
+被截为 9。这是合法配置触发的浮点边界缺陷。
+
+项目使用整数 `maxZoom: (mapMaxZoom + 1) * 2` 表达相同上限，不再让 OpenLayers 从
+`minResolution` 反推层级。该写法是项目的正常配置，不依赖 epsilon 补丁，即使上游
+修复后也无需还原。
+
+上游 issue 尚未提交，建议标题：
+`minResolution with fractional zoomFactor may lose one zoom level due to floating-point rounding`。
+提交前附上上述最小参数组合、实际值与预期值，并确认没有新增的重复 issue。
+
 ## 构建与部署
 
 推送 `main` 或手动触发 `Deploy to COS` 后，GitHub Actions 会恢复或生成地图瓦片，检查数量，安装依赖，执行 `pnpm typecheck`、`pnpm generate` 与 `pnpm verify`，最后通过 COSCLI：
