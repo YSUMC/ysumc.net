@@ -53,6 +53,7 @@ export const buildingTypes = {
   },
 } satisfies Record<BuildingTypeKey, BuildingType>
 
+export const mapMaxZoom = 4
 export const mapBounds: [[number, number], [number, number]] = [
   [-540, 0],
   [0, 960],

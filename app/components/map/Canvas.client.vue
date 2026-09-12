@@ -4,6 +4,7 @@ import {
   buildingTypes,
   eggPositions,
   mapBounds,
+  mapMaxZoom,
   tileLayerUrl,
 } from '~/data/map/config'
 import { points } from '~/data/map/points'
@@ -46,7 +47,7 @@ onMounted(async () => {
     zoom: 1,
     zoomSnap: 0.5,
     minZoom: 0,
-    maxZoom: 4,
+    maxZoom: mapMaxZoom,
     maxBounds: mapBounds,
   })
   L.tileLayer(tileLayerUrl, {
