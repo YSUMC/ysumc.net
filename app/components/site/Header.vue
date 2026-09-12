@@ -29,7 +29,7 @@ const themes = [
     logo: '/image/theme/logo/ysumc-white.svg',
   },
   {
-    background: 'bg-white/80',
+    background: 'bg-white/90',
     text: 'text-ink',
     logo: '/image/theme/logo/ysumc-color.svg',
   },
@@ -57,40 +57,56 @@ function external(to?: string) {
 
 <template>
   <header
-    class="fixed inset-x-0 top-0 z-[2000] shadow-md backdrop-blur-lg transition-all duration-300"
-    :class="[theme.background, theme.text]"
+    class="fixed inset-x-0 top-0 z-[2000] shadow-md transition-all duration-[160ms] ease-[ease]"
+    :class="theme.text"
   >
-    <div class="mx-3 md:mx-10 flex h-14 items-center justify-between">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 z-0 backdrop-blur-lg transition-all duration-[160ms] ease-[ease]"
+      :class="theme.background"
+    />
+    <div
+      class="relative z-10 mx-3 flex h-14 items-center justify-between md:mx-10"
+    >
       <NuxtLink to="/" class="shrink-0" aria-label="燕山大学MC社首页">
         <NuxtImg :src="theme.logo" class="h-8" alt="燕山大学MC社" />
       </NuxtLink>
 
-      <nav class="hidden md:block" aria-label="主导航">
-        <ul class="flex items-center">
-          <li v-for="item in nav" :key="item.name" class="group relative">
+      <nav class="hidden h-full md:block" aria-label="主导航">
+        <ul class="flex h-full items-center">
+          <li
+            v-for="item in nav"
+            :key="item.name"
+            class="group relative h-full"
+          >
             <NuxtLink
               v-if="item.to"
               :to="item.to"
               :external="external(item.to)"
-              class="block px-3 xl:px-5 py-4 text-sm font-medium hover:text-brand"
+              class="flex h-full items-center px-3 text-sm font-medium transition-[color] duration-[160ms] ease-[ease] hover:text-brand xl:px-5"
               >{{ item.name }}</NuxtLink
             >
-            <button
+            <a
               v-else
-              class="px-3 xl:px-5 py-4 text-sm font-medium hover:text-brand"
+              href="#"
+              role="button"
+              aria-haspopup="menu"
+              @click.prevent
+              class="flex h-full items-center px-3 text-sm font-medium transition-[color] duration-[160ms] ease-[ease] hover:text-brand xl:px-5"
             >
               {{ item.name }} ▾
-            </button>
+            </a>
             <div
               v-if="item.children"
-              class="invisible absolute right-0 min-w-40 translate-y-1 rounded-md bg-ink-dark/90 py-1 text-white opacity-0 shadow-lg backdrop-blur-md transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
+              class="invisible absolute right-0 top-full min-w-40 translate-y-1 rounded-md py-1 opacity-0 shadow-lg backdrop-blur-lg transition-[opacity,translate,visibility] duration-[160ms] ease-[ease] group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
+              :class="[theme.background, theme.text]"
             >
               <NuxtLink
                 v-for="child in item.children"
                 :key="child.name"
                 :to="child.to"
                 :external="external(child.to)"
-                class="block whitespace-nowrap px-5 py-3 text-sm hover:text-brand"
+                class="block whitespace-nowrap px-5 py-3 text-sm transition-[color] duration-[160ms] ease-[ease] hover:text-brand"
                 >{{ child.name }}</NuxtLink
               >
             </div>
