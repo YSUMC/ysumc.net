@@ -61,9 +61,18 @@ jobs:
       - run: pnpm verify
 
       - name: Install COSCLI
+        # Pull from the official tencentyun/coscli GitHub release so the sha256
+        # digest lives next to an immutable tag instead of a CDN URL that
+        # Tencent rotates without notice.
+        env:
+          COSCLI_VERSION: v1.0.9
         run: |
-          curl -fsSLo coscli https://cosbrowser.cloud.tencent.com/software/coscli/coscli-linux-amd64
-          echo "a07de5ba2800147a700ed29036b0c76a4229088cee68e1682d0eae19b638a915  coscli" | sha256sum --check
+          BINARY="coscli-${COSCLI_VERSION}-linux-amd64"
+          curl -fsSLo coscli "https://github.com/tencentyun/coscli/releases/download/${COSCLI_VERSION}/${BINARY}"
+          EXPECTED=$(curl -fsSL "https://api.github.com/repos/tencentyun/coscli/releases/tags/${COSCLI_VERSION}" \
+            | jq -r --arg name "$BINARY" '.assets[] | select(.name == $name) | .digest | sub("^sha256:"; "")')
+          [ -n "$EXPECTED" ] || { echo "::error::unable to fetch coscli digest for ${BINARY}"; exit 1; }
+          echo "${EXPECTED}  coscli" | sha256sum --check --strict
           chmod +x coscli
 
       - name: Deploy
