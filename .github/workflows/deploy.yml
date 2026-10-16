@@ -86,3 +86,11 @@ jobs:
           ./coscli config set --secret_id "$TENCENT_CLOUD_SECRET_ID" --secret_key "$TENCENT_CLOUD_SECRET_KEY"
           ./coscli config add --bucket "$TENCENT_CLOUD_BUCKET" --region "$TENCENT_CLOUD_REGION" --endpoint "$TENCENT_CLOUD_ENDPOINT" --alias site
           ./coscli sync .output/public/ cos://site/ --recursive --delete --force --routines 64
+
+      - name: Purge EdgeOne HTML cache
+        env:
+          TENCENT_CLOUD_SECRET_ID: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
+          TENCENT_CLOUD_SECRET_KEY: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
+          ZONE_ID: ${{ vars.EO_ZONE_ID }}
+          TARGETS: "https://ysumc.net/ https://ysumc.net/index.html"
+        run: bash scripts/edgeone-purge.sh
