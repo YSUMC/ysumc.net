@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* 正文 markdown 里的行内 HTML 也带 Tailwind 类名。Tailwind 4 默认只扫描项目源码，
+   不深入 content/，不显式声明就会出现“类名没编译、页面静默错版”。 */
+@source "../../../content";
+
 @font-face {
   font-family: 'YSUMC';
   src:
@@ -26,6 +30,12 @@
   --color-red-dark: #822225;
   --color-orange: #d36839;
   --color-orange-dark: #ba5b32;
+  /* 旧站（ysumc.club）色名，正文与组件里仍在用，保留别名以免类名落空。
+     blue / black / black-dark 是旧 tailwind.config.js 里 brand / ink / ink-dark 的叫法。 */
+  --color-blue: #66cccc;
+  --color-blue-dark: #59b3b3;
+  --color-black: #3b3b3b;
+  --color-black-dark: #212121;
 }
 
 :root {
@@ -50,14 +60,68 @@ a {
   width: min(92%, 80rem);
   margin-inline: auto;
 }
+
+/* 两种正文页壳：
+   .content-prose —— 文章页（layout: article），顶部横幅 + 正文窄栏，挂 prose
+   .content-page  —— 自带 <Hero> 的项目/资料页，正文自己用 <div class="container"> 收窄
+   旧站对应 VuePress 的 Layout.vue 与 BlankPage.vue，下面的排版规则两者共用。 */
 .content-prose {
   width: min(88%, 72rem);
-  margin: 3rem auto;
+  margin: 2rem auto 4rem;
 }
-.content-prose h1 {
+
+/* 正文首个 h1 是文章标题（顶部横幅已经显示过），不重复渲染。
+   用 :first-of-type 而不是 :first-child——正文前面常有引言块，h1 未必是首个子元素；
+   而 axiom 这类通篇用 `#` 分节的正文，后续 h1 仍要当章节标题显示。 */
+.content-prose > h1:first-of-type {
   display: none;
 }
-.content-prose h2 {
+
+/* 旧站 BlankPage / Layout 里对正文的定制，随 VuePress 一起丢过，这里补回。
+   字号沿用旧站的 text-3xl / md:text-4xl，不要各自写 clamp，否则两套页壳会跑偏。 */
+:is(.content-prose, .content-page) :is(h1, h2, h3, h4) {
   font-family: var(--font-ysumc);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  scroll-margin-top: 6rem;
+}
+:is(.content-prose, .content-page) h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+}
+@media (width >= 48rem) {
+  :is(.content-prose, .content-page) h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+/* 标题里的锚点链接只是跳转用，不能带下划线（旧站显式取消过）。 */
+:is(.content-prose, .content-page) :is(h1, h2, h3, h4, h5, h6) a {
+  text-decoration: none;
+  color: inherit;
+}
+.content-prose a {
+  text-decoration-thickness: 2px;
+}
+
+/* 旧站 .container：`max-w-7xl md:mx-auto`，即窄屏贴边、md 以上居中。 */
+:is(.content-prose, .content-page) .container {
+  max-width: 80rem;
+  margin-inline: 0;
+}
+@media (width >= 48rem) {
+  :is(.content-prose, .content-page) .container {
+    margin-inline: auto;
+  }
+}
+
+/* 旧站 .special-page .center-block：整块居中 + 上下留白。 */
+:is(.content-prose, .content-page) .center-block {
+  width: 100%;
+  padding-block: 3.5rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+:is(.content-prose, .content-page) .center-block h2 {
+  margin-bottom: 2.5rem;
 }

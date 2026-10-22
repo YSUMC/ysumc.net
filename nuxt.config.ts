@@ -8,6 +8,15 @@ export default defineNuxtConfig({
   vite: { plugins: [tailwindcss()] },
   content: {
     experimental: { sqliteConnector: 'native' },
+    build: {
+      markdown: {
+        // CommonMark 的强调定界符遇到中文标点会判定失效（`**…。**笔者` 不会加粗），
+        // 而站内正文大量中文紧贴 `**`，必须换成 CJK 友好规则。
+        remarkPlugins: {
+          'remark-cjk-friendly': {},
+        },
+      },
+    },
   },
   image: {
     dir: 'assets',
