@@ -17,7 +17,6 @@ const links = {
   cloud: 'http://cloud.ysumc.net/',
   university: 'https://www.ysu.edu.cn/',
   mua: 'https://www.mualliance.ltd/',
-  blog: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
 }
 
 const nav: NavItem[] = [
@@ -26,7 +25,6 @@ const nav: NavItem[] = [
   {
     name: '资料',
     children: [
-      { name: '皮肤站设置', to: links.blog },
       { name: '我社报道', to: '/document/reports/' },
       { name: '视觉形象', to: '/document/visual-identity/' },
       { name: '加入我们', to: '/join/external-member/' },
@@ -49,7 +47,6 @@ const footerGroups: FooterGroup[] = [
   {
     title: '资料',
     items: [
-      { name: '皮肤站教程', to: links.blog },
       { name: '我社报道', to: '/document/reports/' },
       { name: '视觉形象', to: '/document/visual-identity/' },
       { name: '档案管理办法', to: '/document/archive-management/' },
@@ -64,6 +61,10 @@ const footerGroups: FooterGroup[] = [
       { name: '西安建筑科技大学', to: 'https://www.xauatcraft.com/' },
       { name: '塔里木大学', to: 'https://www.tarucraft.club' },
       { name: '上海应用技术大学', to: 'https://www.sitmc.club' },
+      {
+        name: '西南科技大学',
+        to: 'https://www.swustmc.cn/',
+      },
     ],
   },
   {

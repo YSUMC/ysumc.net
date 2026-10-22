@@ -2,18 +2,6 @@
 const links = useAppConfig().site.links
 const documents = [
   {
-    title: '教程',
-    icon: 'mobi-mbri-edit',
-    text: '我们尽量完成了90%与MC有关的教程。',
-    to: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
-  },
-  {
-    title: '皮肤站设置',
-    icon: 'mobi-mbri-website-theme',
-    text: '进入与燕山大学MC相关的服务器必须使用燕山大学MC社皮肤站账号进行登录，皮肤站与燕大统一身份认证接入，并对审核通过的外校人员以邀请码的方式注册。',
-    to: 'https://blog.ysumc.net/index.php/%E6%95%99%E7%A8%8B/54.html',
-  },
-  {
     title: 'JAVA版MC基础知识',
     icon: 'mobi-mbri-bookmark',
     text: '这里是与java版我的世界相关的绝大部分知识，包括且不限于游戏本体介绍；如何游玩MC；WE（创世神插件），服务器，数据包等技术学习资料。',
