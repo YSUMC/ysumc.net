@@ -31,7 +31,7 @@ const card = [
         >
           <Icon
             :name="item.icon"
-            class="size-18"
+            class="mx-auto block size-18"
             :class="props.dark ? 'text-white' : 'text-gray4'"
           />
           <h3 class="mt-10 font-ysumc text-3xl md:text-4xl">{{ item.name }}</h3>
