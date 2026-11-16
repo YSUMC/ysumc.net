@@ -42,7 +42,7 @@ const { social, groups, license, icp } = appConfig.footer
           <h6 class="mb-3 font-bold">{{ group.title }}</h6>
           <ul class="text-sm">
             <li v-for="item in group.items" :key="item.name" class="mb-2">
-              <NuxtLink :to="item.to">{{ item.name }}</NuxtLink>
+              <AutoLink :to="item.to">{{ item.name }}</AutoLink>
             </li>
           </ul>
         </div>

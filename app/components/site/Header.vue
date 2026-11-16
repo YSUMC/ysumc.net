@@ -49,10 +49,6 @@ watch(
     mobileOpen.value = false
   },
 )
-
-function external(to?: string) {
-  return !!to && /^https?:\/\//.test(to)
-}
 </script>
 
 <template>
@@ -79,12 +75,11 @@ function external(to?: string) {
             :key="item.name"
             class="group relative h-full"
           >
-            <NuxtLink
+            <AutoLink
               v-if="item.to"
               :to="item.to"
-              :external="external(item.to)"
               class="flex h-full items-center px-3 text-sm font-medium transition-[color] duration-[160ms] ease-[ease] hover:text-brand xl:px-5"
-              >{{ item.name }}</NuxtLink
+              >{{ item.name }}</AutoLink
             >
             <a
               v-else
@@ -101,13 +96,12 @@ function external(to?: string) {
               class="invisible absolute right-0 top-full min-w-40 translate-y-1 rounded-md py-1 opacity-0 shadow-lg backdrop-blur-lg transition-[opacity,translate,visibility] duration-[160ms] ease-[ease] group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
               :class="[theme.background, theme.text]"
             >
-              <NuxtLink
+              <AutoLink
                 v-for="child in item.children"
                 :key="child.name"
                 :to="child.to"
-                :external="external(child.to)"
                 class="block whitespace-nowrap px-5 py-3 text-sm transition-[color] duration-[160ms] ease-[ease] hover:text-brand"
-                >{{ child.name }}</NuxtLink
+                >{{ child.name }}</AutoLink
               >
             </div>
           </li>
@@ -134,12 +128,9 @@ function external(to?: string) {
             <ul>
               <li v-for="item in nav" :key="item.name" class="mb-3">
                 <DialogClose v-if="item.to" as-child>
-                  <NuxtLink
-                    :to="item.to"
-                    :external="external(item.to)"
-                    class="block py-1 font-medium"
-                    >{{ item.name }}</NuxtLink
-                  >
+                  <AutoLink :to="item.to" class="block py-1 font-medium">{{
+                    item.name
+                  }}</AutoLink>
                 </DialogClose>
                 <span v-else class="block py-1 font-medium">{{
                   item.name
@@ -147,12 +138,9 @@ function external(to?: string) {
                 <ul v-if="item.children" class="ml-4 text-sm text-gray-dark">
                   <li v-for="child in item.children" :key="child.name">
                     <DialogClose as-child>
-                      <NuxtLink
-                        :to="child.to"
-                        :external="external(child.to)"
-                        class="block py-1.5"
-                        >{{ child.name }}</NuxtLink
-                      >
+                      <AutoLink :to="child.to" class="block py-1.5">{{
+                        child.name
+                      }}</AutoLink>
                     </DialogClose>
                   </li>
                 </ul>
