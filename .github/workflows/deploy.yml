@@ -92,5 +92,5 @@ jobs:
           TENCENT_CLOUD_SECRET_ID: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
           TENCENT_CLOUD_SECRET_KEY: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
           ZONE_ID: ${{ vars.EO_ZONE_ID }}
-          TARGETS: "https://ysumc.net/ https://ysumc.net/index.html"
+          TARGETS: 'https://ysumc.net/ https://ysumc.net/index.html'
         run: bash scripts/edgeone-purge.sh
