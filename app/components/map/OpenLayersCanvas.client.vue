@@ -196,14 +196,72 @@ function togglePoints() {
       :aria-label="showPoints ? '隐藏点位' : '显示点位'"
       @click="togglePoints"
     >
-      <img
-        :src="
-          showPoints
-            ? '/icons/map/point_disable.svg'
-            : '/icons/map/point_enable.svg'
-        "
-        alt=""
-      />
+      <svg
+        v-if="showPoints"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <defs>
+          <mask id="SVGkJZDndpb">
+            <path
+              fill="#fff"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z"
+            />
+            <circle cx="12" cy="9" r="2.5" fill="#000" />
+            <path
+              fill="none"
+              stroke="#000"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M-1 11h26"
+              transform="rotate(45 12 12)"
+            />
+          </mask>
+        </defs>
+        <path fill="currentColor" d="M0 0h24v24H0z" mask="url(#SVGkJZDndpb)" />
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M-1 13h26"
+          transform="rotate(45 12 12)"
+        />
+      </svg>
+      <svg
+        v-else
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <defs>
+          <mask id="SVGq1Lj2beE">
+            <path
+              fill="#fff"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z"
+            />
+            <circle cx="12" cy="9" r="2.5" fill="#000" />
+          </mask>
+        </defs>
+        <path fill="currentColor" d="M0 0h24v24H0z" mask="url(#SVGq1Lj2beE)" />
+      </svg>
     </button>
     <div ref="container" class="openlayers-map h-full bg-[#2b3741]" />
   </div>
@@ -216,6 +274,7 @@ function togglePoints() {
   padding: 0;
   background: none;
   border: 0;
+  cursor: pointer;
 }
 .openlayers-map .map-icon svg {
   display: block;
@@ -277,6 +336,7 @@ function togglePoints() {
   line-height: 1;
   background: rgba(255, 255, 255, 0.92);
   border: 0;
+  cursor: pointer;
   transition:
     color 0.2s ease,
     background-color 0.2s ease;
@@ -303,7 +363,7 @@ function togglePoints() {
   border-radius: 0.375rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
-.map-point-toggle img {
+.map-point-toggle svg {
   width: 1.4rem;
   height: 1.4rem;
 }
