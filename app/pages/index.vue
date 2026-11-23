@@ -111,7 +111,7 @@ useHead({ link: [{ rel: 'canonical', href: 'https://ysumc.net/' }] })
         >{{ item.text }}</CardsHomeProject
       >
     </div>
-    <HomeJoinUs /><HomeContact /><HomeMuaBanner />
+    <JoinUs /><HomeContact /><HomeMuaBanner />
     <HomeCountdown
       :time="birthday"
       title="距离社团生日还剩下："

@@ -33,6 +33,6 @@ useSeoMeta({
         >您可以在任何时间向社团管理层提出申请。社团管理层会审核您的申请，并根据您的能力做决定。
       </p>
     </Introduction>
-    <HomeJoinUs />
+    <JoinUs />
   </div>
 </template>

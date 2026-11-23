@@ -54,6 +54,6 @@ useSeoMeta({
       image="/image/project/Activity-2.png"
       >燕山大学Minecraft学生同好者协会成立于2022年9月13日。每年这一天，我们都在一起。</HomeCountdown
     >
-    <HomeJoinUs />
+    <JoinUs />
   </div>
 </template>

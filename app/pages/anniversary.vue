@@ -159,7 +159,7 @@ useSeoMeta({
       </p>
     </CenterText>
     <FirstAnniBigPicture />
-    <HomeJoinUs dark class="mt-24" />
+    <JoinUs dark class="mt-24" />
     <HomeContact dark />
     <HomeMuaBanner dark />
   </div>
