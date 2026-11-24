@@ -9,7 +9,9 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     './modules/header-manifest',
   ],
-  experimental: { extraPageMetaExtractionKeys: ['headerImmersive'] },
+  experimental: {
+    extraPageMetaExtractionKeys: ['headerImmersive', 'isDark'],
+  },
   css: ['~/assets/css/main.css'],
   vite: { plugins: [tailwindcss()] },
   content: {

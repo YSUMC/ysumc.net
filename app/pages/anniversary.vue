@@ -1,12 +1,7 @@
 <script setup lang="ts">
 // 一周年特别页，移植自 ysumc.club（旧 Nuxt 3 站）的 pages/index.vue。
-// 页面是深色底，页头用黑底态；离开本页时把颜色还给白底态。
-const setNavBar =
-  inject<(transparent?: boolean, color?: 'white' | 'black') => void>(
-    'setNavBar',
-  )
-setNavBar?.(undefined, 'black')
-onBeforeRouteLeave(() => setNavBar?.(undefined, 'white'))
+// 页面是深色底，实底页头使用黑底态。
+definePageMeta({ isDark: true })
 
 type AnniversaryProject = {
   title: string

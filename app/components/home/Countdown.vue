@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { isCountdownImmersive } from '#shared/header'
+
 const props = defineProps<{ time: Date; title?: string; image?: string }>()
 const values = ref(['00', '00', '00', '00'])
 const section = ref<HTMLElement>()
 const imageStyle = useParallax(section)
+useImmersiveHeaderBlock(section, () => isCountdownImmersive(props.image))
 let timer: ReturnType<typeof setInterval> | undefined
 const updateValues = () => {
   const diff = Math.max(0, props.time.getTime() - Date.now())

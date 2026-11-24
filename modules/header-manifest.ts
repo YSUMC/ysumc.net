@@ -3,7 +3,12 @@ import { join, relative, resolve } from 'node:path'
 import { addTemplate, defineNuxtModule, updateTemplates } from 'nuxt/kit'
 import { parseMarkdown } from '@nuxtjs/mdc/runtime'
 import { parse } from 'vue/compiler-sfc'
-import { normalizeHeaderPath, type HeaderManifest } from '../shared/header'
+import {
+  immersiveComponentName,
+  isCountdownImmersive,
+  normalizeHeaderPath,
+  type HeaderManifest,
+} from '../shared/header'
 
 const TEMPLATE_NAME = 'header-manifest.ts'
 const CONTENT_COLLECTIONS = new Set(['articles', 'project', 'document'])
@@ -11,7 +16,9 @@ const CONTENT_COLLECTIONS = new Set(['articles', 'project', 'document'])
 type TemplateProp = {
   type: number
   name?: string
-  arg?: string
+  value?: { content?: string }
+  exp?: { content?: string; isStatic?: boolean }
+  arg?: { content?: string }
 }
 
 type TemplateNode = {
@@ -52,7 +59,7 @@ function hasDynamicDirective(node: TemplateNode): boolean {
   return (node.props ?? []).some((prop) => {
     if (prop.type !== 7) return false
     if (['if', 'else', 'else-if', 'for'].includes(prop.name ?? '')) return true
-    return prop.name === 'bind' && prop.arg === 'is'
+    return prop.name === 'bind' && prop.arg?.content === 'is'
   })
 }
 
@@ -74,14 +81,40 @@ function resolveFirstVisual(nodes: TemplateNode[] | undefined): {
   }
 }
 
-function isImmersiveNode(node: TemplateNode): boolean {
-  return node.type === 1 && node.tag?.toLowerCase() === 'hero'
+function readStaticProp(
+  node: TemplateNode,
+  name: string,
+): { known: boolean; value?: unknown } {
+  let known = true
+  let value: unknown
+  for (const prop of node.props ?? []) {
+    if (prop.type === 6 && prop.name === name) {
+      value = prop.value?.content
+    } else if (prop.type === 7 && prop.name === 'bind') {
+      if (prop.arg?.content === name) known = false
+      else if (!prop.arg?.content) known = false
+    }
+  }
+  return { known, value }
+}
+
+function classifyImmersiveNode(node: TemplateNode): Inferred {
+  if (node.type !== 1) return { immersive: false, confident: true }
+  const name = immersiveComponentName(node.tag ?? '')
+  if (!name) return { immersive: false, confident: true }
+  if (name === 'Hero') return { immersive: true, confident: true }
+  const image = readStaticProp(node, 'image')
+  return {
+    immersive: image.known && isCountdownImmersive(image.value),
+    confident: image.known,
+  }
 }
 
 type HastNode = {
   type?: string
   tag?: string
   value?: string
+  props?: Record<string, unknown>
   children?: HastNode[]
 }
 
@@ -93,25 +126,39 @@ function meaningfulHastNodes(nodes: HastNode[] | undefined): HastNode[] {
   })
 }
 
+function classifyHastNode(node: HastNode): Inferred {
+  if (node.type === 'text') return { immersive: false, confident: true }
+  if (node.type !== 'element') return { immersive: false, confident: true }
+  const name = immersiveComponentName(node.tag ?? '')
+  if (!name) return { immersive: false, confident: true }
+  if (name === 'Hero') return { immersive: true, confident: true }
+  const props = node.props ?? {}
+  if (
+    Object.keys(props).some((key) => key.startsWith(':') || key === 'v-bind')
+  ) {
+    return { immersive: false, confident: false }
+  }
+  return {
+    immersive: isCountdownImmersive(props.image),
+    confident: true,
+  }
+}
+
 function inspectHastNode(node: HastNode): Inferred {
   let current: HastNode | undefined = node
   while (current) {
-    if (current.type === 'text') {
-      return { immersive: false, confident: true }
-    }
-    if (current.type === 'element' && current.tag?.toLowerCase() === 'hero') {
-      return { immersive: true, confident: true }
-    }
+    if (current.type !== 'element') return classifyHastNode(current)
+    const classified = classifyHastNode(current)
     const children = meaningfulHastNodes(current.children)
     if (
-      current.type === 'element' &&
       current.tag?.toLowerCase() === 'div' &&
+      !immersiveComponentName(current.tag ?? '') &&
       children.length
     ) {
       current = children[0]
       continue
     }
-    return { immersive: false, confident: true }
+    return classified
   }
   return { immersive: false, confident: true }
 }
@@ -159,9 +206,12 @@ function classifyVuePage(file: string): Inferred {
     throw new Error(`[header-manifest] ${file} 缺少 template`)
   }
   const resolution = resolveFirstVisual(ast.children)
+  const classified = resolution.node
+    ? classifyImmersiveNode(resolution.node)
+    : { immersive: false, confident: true }
   return {
-    immersive: resolution.node ? isImmersiveNode(resolution.node) : false,
-    confident: resolution.confident,
+    immersive: classified.immersive,
+    confident: resolution.confident && classified.confident,
   }
 }
 

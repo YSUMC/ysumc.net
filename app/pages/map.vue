@@ -1,32 +1,29 @@
 <script setup lang="ts">
 import type { MapPoint } from '~/data/map/types'
+import type { HeaderVariant } from '#shared/header'
 
-definePageMeta({ layout: 'blank' })
+definePageMeta({ layout: false })
 useSeoMeta({
   title: '像素燕大全导览图 - 燕山大学MC社',
   description: '像素燕大燕山大学复原计划交互式全导览图。',
   ogImage: '/image/gf.png',
 })
 
-const setNavBar =
-  inject<(transparent?: boolean, color?: 'white' | 'black') => void>(
-    'setNavBar',
-  )
 const zoom = ref(0)
 const selected = ref<MapPoint>()
 const isOverview = computed(() => zoom.value <= 0.5 + Number.EPSILON)
+const variant = computed<HeaderVariant>(() =>
+  isOverview.value ? 'transparent' : 'light',
+)
 const barKey = computed(() => {
   if (selected.value) return selected.value.position.join(':')
   return isOverview.value ? 'title' : undefined
-})
-
-watch(isOverview, (overview) => setNavBar?.(!overview, 'white'), {
-  immediate: true,
 })
 </script>
 
 <template>
   <div class="h-dvh">
+    <SiteHeader :variant="variant" />
     <MapOpenLayersCanvas
       @zoom="zoom = $event"
       @pointclick="selected = $event"

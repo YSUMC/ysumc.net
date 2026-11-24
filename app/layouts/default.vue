@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import headerManifest from '#build/header-manifest'
-import { normalizeHeaderPath } from '#shared/header'
+import { normalizeHeaderPath, type HeaderVariant } from '#shared/header'
 
-// 首帧透明态优先页面元数据，其次构建期清单；滚动后由 Hero 组件接管。`solid` 用于 404 等页面。
+// 首帧透明态优先页面元数据，其次构建期清单；挂载后由沉浸式区块注册表接管。
 const props = withDefaults(defineProps<{ solid?: boolean }>(), { solid: false })
 const route = useRoute()
+const { overImmersive, reset } = useHeaderRegistry()
 const warnedManifestPaths = new Set<string>()
+
 const initialTransparent = computed(() => {
   if (props.solid) return false
   const metaImmersive = route.meta.headerImmersive
@@ -18,29 +20,25 @@ const initialTransparent = computed(() => {
   }
   return value ?? true
 })
-const navState = reactive({
-  transparent: initialTransparent.value,
-  color: 'white' as 'white' | 'black',
+
+const isDark = computed(() => route.meta.isDark === true)
+const variant = computed<HeaderVariant>(() => {
+  if (props.solid) return 'light'
+  if (overImmersive.value ?? initialTransparent.value) return 'transparent'
+  return isDark.value ? 'dark' : 'light'
 })
 
 watch(
   () => route.path,
   () => {
-    navState.transparent = initialTransparent.value
+    reset()
   },
 )
-
-function setNavBar(transparent?: boolean, color?: 'white' | 'black') {
-  if (typeof transparent === 'boolean') navState.transparent = transparent
-  if (color) navState.color = color
-}
-
-provide('setNavBar', setNavBar)
 </script>
 
 <template>
   <div class="min-h-dvh flex flex-col">
-    <SiteHeader :transparent="navState.transparent" :color="navState.color" />
+    <SiteHeader :variant="variant" />
     <main class="grow">
       <slot />
     </main>

@@ -8,20 +8,18 @@ import {
   DialogTrigger,
 } from 'reka-ui'
 
-const props = withDefaults(
-  defineProps<{ transparent?: boolean; color?: 'white' | 'black' }>(),
-  {
-    transparent: true,
-    color: 'white',
-  },
-)
+import type { HeaderVariant } from '#shared/header'
+
+const props = withDefaults(defineProps<{ variant?: HeaderVariant }>(), {
+  variant: 'transparent',
+})
 const appConfig = useAppConfig()
 const route = useRoute()
 const mobileOpen = ref(false)
 
 const nav = appConfig.nav
 
-// 透明态（英雄图之上，无背景）、白底态、黑底态。黑底态旧站没有页面触发，作为备用保留。
+// 透明态（沉浸式区块之上，无背景）、白底态、黑底态。
 const themes = [
   {
     background: '',
@@ -40,7 +38,10 @@ const themes = [
   },
 ] as const
 const theme = computed(
-  () => themes[props.transparent ? 0 : props.color === 'white' ? 1 : 2],
+  () =>
+    themes[
+      props.variant === 'transparent' ? 0 : props.variant === 'light' ? 1 : 2
+    ],
 )
 
 watch(
