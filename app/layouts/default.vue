@@ -1,11 +1,34 @@
 <script setup lang="ts">
-// 默认透明：站点几乎所有页面首屏都是整屏英雄图，透明态由 Hero 组件的
-// 观察器在挂载时接管；`solid` 用于没有英雄图的页面（如 404）。
+import headerManifest from '#build/header-manifest'
+import { normalizeHeaderPath } from '#shared/header'
+
+// 首帧透明态优先页面元数据，其次构建期清单；滚动后由 Hero 组件接管。`solid` 用于 404 等页面。
 const props = withDefaults(defineProps<{ solid?: boolean }>(), { solid: false })
+const route = useRoute()
+const warnedManifestPaths = new Set<string>()
+const initialTransparent = computed(() => {
+  if (props.solid) return false
+  const metaImmersive = route.meta.headerImmersive
+  if (typeof metaImmersive === 'boolean') return metaImmersive
+  const key = normalizeHeaderPath(route.path)
+  const value = headerManifest[key]
+  if (import.meta.dev && value === undefined && !warnedManifestPaths.has(key)) {
+    warnedManifestPaths.add(key)
+    console.warn(`[header-manifest] 路由 ${key} 没有清单项，暂按透明处理`)
+  }
+  return value ?? true
+})
 const navState = reactive({
-  transparent: !props.solid,
+  transparent: initialTransparent.value,
   color: 'white' as 'white' | 'black',
 })
+
+watch(
+  () => route.path,
+  () => {
+    navState.transparent = initialTransparent.value
+  },
+)
 
 function setNavBar(transparent?: boolean, color?: 'white' | 'black') {
   if (typeof transparent === 'boolean') navState.transparent = transparent

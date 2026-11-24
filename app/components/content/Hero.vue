@@ -1,17 +1,11 @@
 <script lang="ts">
-// 页头透明态的判定就放在这个组件里：页头正下方压着全宽图片/视频时才应当是透明态。
-// 同页可能有多块全宽区块（首页英雄图、页面中间的视频横幅等），所以用模块级集合统一判定，
-// 任意一块压住页头区域（顶部越过页头下沿、且自身还在视口内）即为透明。
-const headerBottom = 40
+// 同页可能有多块全宽区块，用模块级集合登记；判定函数与构建期清单共用。
 const headerBlocks = new Set<HTMLElement>()
-
-function overlapsHeader(element: HTMLElement) {
-  const rect = element.getBoundingClientRect()
-  return rect.top < headerBottom && rect.bottom > 0
-}
 </script>
 
 <script setup lang="ts">
+import { isHeaderTransparent } from '#shared/header'
+
 // 三种用法：
 //   screen —— 整屏英雄图，内容是居中的标题/正文或插槽
 //   banner —— 文章顶部 384px 横幅，标题/副标题/标签落在左下角
@@ -44,7 +38,11 @@ const sectionClass = computed(
 
 // 只改透明与否，不动 color（一周年特别页这类深色页面自己把页头设成黑底态）
 function updateNavBar() {
-  setNavBar?.([...headerBlocks].some(overlapsHeader))
+  const blocks = [...headerBlocks].map((element) => {
+    const rect = element.getBoundingClientRect()
+    return { immersive: true, top: rect.top, bottom: rect.bottom }
+  })
+  setNavBar?.(isHeaderTransparent(blocks))
 }
 
 onMounted(() => {

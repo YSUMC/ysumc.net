@@ -3,7 +3,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/sitemap'],
+  modules: [
+    '@nuxt/content',
+    '@nuxt/image',
+    '@nuxtjs/sitemap',
+    './modules/header-manifest',
+  ],
+  experimental: { extraPageMetaExtractionKeys: ['headerImmersive'] },
   css: ['~/assets/css/main.css'],
   vite: { plugins: [tailwindcss()] },
   content: {
