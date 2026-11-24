@@ -36,6 +36,7 @@ type Inferred = {
 
 type InspectedContent = Inferred & {
   explicit: boolean | undefined
+  isDark: boolean
 }
 
 type ResolvedRoute = {
@@ -43,6 +44,7 @@ type ResolvedRoute = {
   file?: string
   meta?: {
     headerImmersive?: unknown
+    isDark?: unknown
   }
   children?: ResolvedRoute[]
 }
@@ -181,14 +183,16 @@ async function inspectMarkdown(
   const data = parsed.data as {
     layout?: unknown
     headerImmersive?: unknown
+    isDark?: unknown
   }
   const explicit =
     typeof data.headerImmersive === 'boolean' ? data.headerImmersive : undefined
+  const isDark = typeof data.isDark === 'boolean' ? data.isDark : false
   const inferred =
     collection === 'articles' || data.layout === 'article'
       ? { immersive: true, confident: true }
       : inspectHastBody(parsed.body as { children?: HastNode[] })
-  return { ...inferred, explicit }
+  return { ...inferred, explicit, isDark }
 }
 
 function classifyVuePage(file: string): Inferred {
@@ -270,12 +274,16 @@ async function buildManifest(
     warnedMessages.add(message)
     console.warn(message)
   }
-  const add = (path: string, initial: boolean, source: string) => {
+  const add = (
+    path: string,
+    entry: { immersive: boolean; isDark: boolean },
+    source: string,
+  ) => {
     const key = normalizeHeaderPath(path)
     if (Object.hasOwn(manifest, key)) {
       throw new Error(`[header-manifest] 路径重复: ${key}（${source}）`)
     }
-    manifest[key] = initial
+    manifest[key] = entry
   }
 
   const label = (immersive: boolean) => (immersive ? '透明' : '不透明')
@@ -313,7 +321,14 @@ async function buildManifest(
         'frontmatter 中的 headerImmersive',
       )
     }
-    add(path, inferred.explicit ?? inferred.immersive, file)
+    add(
+      path,
+      {
+        immersive: inferred.explicit ?? inferred.immersive,
+        isDark: inferred.isDark,
+      },
+      file,
+    )
   }
 
   forEachRoutePath(routes, (route, path) => {
@@ -349,7 +364,9 @@ async function buildManifest(
         'definePageMeta({ headerImmersive: true/false })',
       )
     }
-    add(path, explicit ?? inferred.immersive, route.file)
+    const isDark =
+      typeof route.meta?.isDark === 'boolean' ? route.meta.isDark : false
+    add(path, { immersive: explicit ?? inferred.immersive, isDark }, route.file)
   })
 
   return Object.fromEntries(
@@ -369,7 +386,7 @@ export default defineNuxtModule({
       write: true,
       getContents: async () => {
         const manifest = await buildManifest(contentDir, routes, warnedMessages)
-        return `export default ${JSON.stringify(manifest, null, 2)} as Record<string, boolean>\n`
+        return `export default ${JSON.stringify(manifest, null, 2)} as Record<string, { immersive: boolean; isDark: boolean }>\n`
       },
     })
 

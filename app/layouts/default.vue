@@ -8,20 +8,32 @@ const route = useRoute()
 const { overImmersive, reset } = useHeaderRegistry()
 const warnedManifestPaths = new Set<string>()
 
+const manifestKey = computed(() => normalizeHeaderPath(route.path))
+const manifestEntry = computed(() => headerManifest[manifestKey.value])
+
 const initialTransparent = computed(() => {
   if (props.solid) return false
   const metaImmersive = route.meta.headerImmersive
   if (typeof metaImmersive === 'boolean') return metaImmersive
-  const key = normalizeHeaderPath(route.path)
-  const value = headerManifest[key]
-  if (import.meta.dev && value === undefined && !warnedManifestPaths.has(key)) {
-    warnedManifestPaths.add(key)
-    console.warn(`[header-manifest] 路由 ${key} 没有清单项，暂按透明处理`)
+  if (
+    import.meta.dev &&
+    manifestEntry.value === undefined &&
+    !warnedManifestPaths.has(manifestKey.value)
+  ) {
+    warnedManifestPaths.add(manifestKey.value)
+    console.warn(
+      `[header-manifest] 路由 ${manifestKey.value} 没有清单项，暂按透明处理`,
+    )
   }
-  return value ?? true
+  return manifestEntry.value?.immersive ?? true
 })
 
-const isDark = computed(() => route.meta.isDark === true)
+const isDark = computed(() => {
+  const metaIsDark = route.meta.isDark
+  if (typeof metaIsDark === 'boolean') return metaIsDark
+  return manifestEntry.value?.isDark ?? false
+})
+
 const variant = computed<HeaderVariant>(() => {
   if (props.solid) return 'light'
   if (overImmersive.value ?? initialTransparent.value) return 'transparent'

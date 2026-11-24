@@ -14,6 +14,7 @@ const commonSchema = z.object({
   // 页面呈现方式：article = 顶部横幅 + 正文窄栏，page = 正文自带英雄图
   layout: z.enum(['article', 'page']).optional(),
   headerImmersive: z.boolean().optional(),
+  isDark: z.boolean().optional(),
   subtitle: z.string().optional(),
   date: z.union([z.string(), z.date()]).optional(),
   tags: z.array(z.string()).optional(),

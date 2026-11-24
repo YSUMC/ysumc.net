@@ -2,7 +2,12 @@ export const HEADER_OVERLAP_LIMIT = 40
 
 export type HeaderVariant = 'transparent' | 'light' | 'dark'
 
-export type HeaderManifest = Record<string, boolean>
+export type HeaderManifestEntry = {
+  immersive: boolean
+  isDark: boolean
+}
+
+export type HeaderManifest = Record<string, HeaderManifestEntry>
 
 export type ImmersiveComponentName = 'Hero' | 'HomeCountdown'
 
